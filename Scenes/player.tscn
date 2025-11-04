@@ -1,0 +1,390 @@
+[gd_scene load_steps=44 format=3 uid="uid://cepnvah82t4vb"]
+
+[ext_resource type="Script" uid="uid://gdkoyxqtf1rn" path="res://Scripts/Player/player.gd" id="1_fkybt"]
+[ext_resource type="Script" uid="uid://2ceqpphibeta" path="res://Scripts/Player/Circle.gd" id="1_vgqql"]
+[ext_resource type="Script" uid="uid://u1dc0kgt0s68" path="res://Scripts/Player/Rectangle.gd" id="2_fkybt"]
+[ext_resource type="Script" uid="uid://b0w0dhvcufgdq" path="res://Scripts/Player/Triangle.gd" id="3_x3wgy"]
+[ext_resource type="Script" uid="uid://dcp5xe2vbdhbg" path="res://Scripts/Player/Small_circle.gd" id="4_3smsa"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_8erm5"]
+
+[sub_resource type="Gradient" id="Gradient_fkybt"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.58666664, 1)
+colors = PackedColorArray(0.3019608, 0, 0.7882353, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_x3wgy"]
+gradient = SubResource("Gradient_fkybt")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f1ek2"]
+radius = 49.010204
+
+[sub_resource type="Animation" id="Animation_x3wgy"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_fkybt"]
+resource_name = "circle"
+length = 5.0
+loop_mode = 1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8erm5"]
+_data = {
+&"RESET": SubResource("Animation_x3wgy"),
+&"circle": SubResource("Animation_fkybt")
+}
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_3smsa"]
+
+[sub_resource type="Gradient" id="Gradient_8erm5"]
+offsets = PackedFloat32Array(0.56, 0.68)
+colors = PackedColorArray(0, 1, 1, 1, 0, 1, 1, 0.06666667)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_f1ek2"]
+gradient = SubResource("Gradient_8erm5")
+
+[sub_resource type="Gradient" id="Gradient_tx1dd"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.28666666, 0.38666666, 0.5133333)
+colors = PackedColorArray(0.49803922, 0.30980393, 0.80784315, 1, 0.33686805, 0.53315926, 0.87002736, 1, 0.046965092, 0.93491447, 0.9818797, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gymyn"]
+gradient = SubResource("Gradient_tx1dd")
+
+[sub_resource type="Gradient" id="Gradient_f1ek2"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tx1dd"]
+gradient = SubResource("Gradient_f1ek2")
+fill = 1
+fill_from = Vector2(0.5140187, 0.5140187)
+fill_to = Vector2(0.8551402, 0.21962617)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tx1dd"]
+
+[sub_resource type="Gradient" id="Gradient_pu2lt"]
+offsets = PackedFloat32Array(0.40123457, 1)
+colors = PackedColorArray(0, 1, 0, 1, 0, 1, 1, 0.69803923)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ukyrk"]
+gradient = SubResource("Gradient_pu2lt")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gymyn"]
+size = Vector2(234, 24)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7dp3o"]
+
+[sub_resource type="Gradient" id="Gradient_h4iuc"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.31333333, 0.49333334)
+colors = PackedColorArray(0.6693271, 1, 1, 0.7552959, 0.19607843, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fd4e3"]
+gradient = SubResource("Gradient_h4iuc")
+
+[sub_resource type="Gradient" id="Gradient_qqcod"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.28, 0.5)
+colors = PackedColorArray(0.591705, 1, 1, 0.79543215, 0.24360791, 1, 1, 0.9754238, 0.591705, 1, 1, 0.79543215)
+metadata/_snap_enabled = true
+metadata/_snap_count = 2
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_igrcy"]
+gradient = SubResource("Gradient_qqcod")
+
+[sub_resource type="PrismMesh" id="PrismMesh_pu2lt"]
+
+[sub_resource type="Gradient" id="Gradient_fs7ks"]
+offsets = PackedFloat32Array(0, 0.7266667, 1)
+colors = PackedColorArray(0.6122612, 0.53689945, 0, 1, 1, 1, 1, 0.62352943, 0.9912606, 0.39482233, 0, 0.72156864)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_l6n3p"]
+gradient = SubResource("Gradient_fs7ks")
+
+[sub_resource type="Gradient" id="Gradient_olqyp"]
+offsets = PackedFloat32Array(0, 0.7266667, 1)
+colors = PackedColorArray(0, 0.972549, 0.21960784, 1, 1, 1, 1, 0.62352943, 0, 1, 0.43137255, 0.72156864)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_wpjfl"]
+gradient = SubResource("Gradient_olqyp")
+
+[sub_resource type="BoxMesh" id="BoxMesh_bi64h"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_2ijsl"]
+
+[sub_resource type="Gradient" id="Gradient_p1odr"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.6933333)
+colors = PackedColorArray(1, 1, 1, 0.62352943, 0.654902, 0.6901961, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_0gysh"]
+gradient = SubResource("Gradient_p1odr")
+
+[sub_resource type="Gradient" id="Gradient_vfarp"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.30666667, 1)
+colors = PackedColorArray(0.654902, 0.6901961, 1, 1, 1, 1, 1, 0.62352943)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_y6uwr"]
+gradient = SubResource("Gradient_vfarp")
+
+[sub_resource type="Gradient" id="Gradient_x3wgy"]
+offsets = PackedFloat32Array(0.5133333, 0.91333336, 1)
+colors = PackedColorArray(0, 0.62352943, 1, 1, 0.90410954, 0.9639001, 1, 0.09589046, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3smsa"]
+gradient = SubResource("Gradient_x3wgy")
+
+[sub_resource type="Curve" id="Curve_fkybt"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.6292135), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_8erm5"]
+
+[node name="Base of player" type="Node2D"]
+z_index = 5
+script = ExtResource("1_fkybt")
+
+[node name="Circle" type="CharacterBody2D" parent="."]
+script = ExtResource("1_vgqql")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Circle"]
+position = Vector2(55.704468, 48.763184)
+scale = Vector2(100, 100)
+mesh = SubResource("SphereMesh_8erm5")
+texture = SubResource("GradientTexture1D_x3wgy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Circle"]
+position = Vector2(55.704468, 48.763184)
+shape = SubResource("CircleShape2D_f1ek2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Circle"]
+libraries = {
+&"": SubResource("AnimationLibrary_8erm5")
+}
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="Circle"]
+position = Vector2(31.688873, 25.790207)
+rotation = 0.52359873
+scale = Vector2(2.4999998, 4.5312014)
+mesh = SubResource("CapsuleMesh_3smsa")
+texture = SubResource("GradientTexture1D_f1ek2")
+
+[node name="MeshInstance2D5" type="MeshInstance2D" parent="Circle"]
+position = Vector2(56.90416, 67.56349)
+rotation = 0.7853982
+scale = Vector2(2.4999998, 2.654995)
+mesh = SubResource("CapsuleMesh_3smsa")
+texture = SubResource("GradientTexture1D_f1ek2")
+
+[node name="MeshInstance2D6" type="MeshInstance2D" parent="Circle"]
+position = Vector2(51.704468, 66.76318)
+rotation = 2.133121
+scale = Vector2(2.6584778, 4.8943686)
+mesh = SubResource("CapsuleMesh_3smsa")
+texture = SubResource("GradientTexture1D_f1ek2")
+
+[node name="MeshInstance2D4" type="MeshInstance2D" parent="Circle"]
+position = Vector2(35.704468, 25.763186)
+rotation = 2.6179938
+scale = Vector2(2.5, 4.5753765)
+mesh = SubResource("CapsuleMesh_3smsa")
+texture = SubResource("GradientTexture1D_f1ek2")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="Circle"]
+position = Vector2(72.70447, 25.763186)
+scale = Vector2(2.4999998, 4.4999995)
+mesh = SubResource("CapsuleMesh_3smsa")
+texture = SubResource("GradientTexture1D_gymyn")
+
+[node name="Camera2D" type="Camera2D" parent="Circle"]
+physics_interpolation_mode = 1
+position = Vector2(52, -94)
+
+[node name="PointLight2D" type="PointLight2D" parent="Circle"]
+position = Vector2(60.999996, 51.999996)
+scale = Vector2(7, 7)
+texture = SubResource("GradientTexture2D_tx1dd")
+
+[node name="rectangle" type="CharacterBody2D" parent="."]
+visible = false
+position = Vector2(73, -4)
+platform_on_leave = 2
+script = ExtResource("2_fkybt")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="rectangle"]
+position = Vector2(-18.487732, 50.041626)
+scale = Vector2(234.31242, 24.187506)
+mesh = SubResource("BoxMesh_tx1dd")
+texture = SubResource("GradientTexture1D_ukyrk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rectangle"]
+position = Vector2(-18.647766, 49.88159)
+shape = SubResource("RectangleShape2D_gymyn")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="rectangle"]
+position = Vector2(37.512268, 43.041626)
+scale = Vector2(27.250004, 2)
+mesh = SubResource("CylinderMesh_7dp3o")
+texture = SubResource("GradientTexture1D_fd4e3")
+
+[node name="MeshInstance2D4" type="MeshInstance2D" parent="rectangle"]
+position = Vector2(61.845932, 59.23275)
+rotation = 1.3089969
+scale = Vector2(1.2385193, 6.204175)
+mesh = SubResource("CylinderMesh_7dp3o")
+texture = SubResource("GradientTexture1D_fd4e3")
+
+[node name="MeshInstance2D5" type="MeshInstance2D" parent="rectangle"]
+position = Vector2(51.38749, 60.719864)
+rotation = 1.5707964
+scale = Vector2(1.8555579, 6.8752127)
+mesh = SubResource("CylinderMesh_7dp3o")
+texture = SubResource("GradientTexture1D_fd4e3")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="rectangle"]
+position = Vector2(79.51228, 43.041626)
+scale = Vector2(31.25, 2)
+mesh = SubResource("CylinderMesh_7dp3o")
+texture = SubResource("GradientTexture1D_igrcy")
+
+[node name="Camera2D" type="Camera2D" parent="rectangle"]
+position = Vector2(-23.647766, -92.11841)
+
+[node name="PointLight2D" type="PointLight2D" parent="rectangle"]
+position = Vector2(-17, 48.999996)
+scale = Vector2(7, 7)
+texture = SubResource("GradientTexture2D_tx1dd")
+
+[node name="Triangle" type="CharacterBody2D" parent="."]
+position = Vector2(30, 15)
+script = ExtResource("3_x3wgy")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Triangle"]
+position = Vector2(27.731403, 21.999998)
+rotation = 3.1415925
+scale = Vector2(123.46282, 100)
+mesh = SubResource("PrismMesh_pu2lt")
+texture = SubResource("GradientTexture1D_l6n3p")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="Triangle"]
+position = Vector2(19, 7.999996)
+rotation = 3.1415925
+scale = Vector2(9.108657, 9.9807)
+mesh = SubResource("PrismMesh_pu2lt")
+texture = SubResource("GradientTexture1D_wpjfl")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="Triangle"]
+position = Vector2(38, 11)
+rotation = 3.1415925
+scale = Vector2(11.990786, 1.4975469)
+mesh = SubResource("BoxMesh_bi64h")
+texture = SubResource("GradientTexture1D_wpjfl")
+
+[node name="MeshInstance2D4" type="MeshInstance2D" parent="Triangle"]
+position = Vector2(35.000004, 59)
+rotation = 5.759587
+scale = Vector2(9.700838, 1.0339417)
+mesh = SubResource("QuadMesh_2ijsl")
+texture = SubResource("GradientTexture1D_0gysh")
+
+[node name="MeshInstance2D5" type="MeshInstance2D" parent="Triangle"]
+position = Vector2(25.999996, 58)
+rotation = 6.806784
+scale = Vector2(12.339975, 1.1519889)
+mesh = SubResource("QuadMesh_2ijsl")
+texture = SubResource("GradientTexture1D_y6uwr")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Triangle"]
+visible = false
+position = Vector2(-27.187511, -25.312496)
+scale = Vector2(2.1134288, 2.2767859)
+polygon = PackedVector2Array(-2.2770996, 42.301956, 26, 0, 54.502674, 42.301956)
+
+[node name="Camera2D" type="Camera2D" parent="Triangle"]
+position = Vector2(23, -111)
+
+[node name="PointLight2D" type="PointLight2D" parent="Triangle"]
+position = Vector2(24, 24.999996)
+scale = Vector2(7, 7)
+texture = SubResource("GradientTexture2D_tx1dd")
+
+[node name="small_circle" type="CharacterBody2D" parent="."]
+position = Vector2(1, 35)
+script = ExtResource("4_3smsa")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="small_circle"]
+position = Vector2(57.750275, 45.750015)
+scale = Vector2(30, 30)
+mesh = SubResource("SphereMesh_8erm5")
+texture = SubResource("GradientTexture1D_3smsa")
+
+[node name="Line2D" type="Line2D" parent="small_circle/MeshInstance2D"]
+top_level = true
+z_index = 1
+position = Vector2(41, 80)
+points = PackedVector2Array(22, 0)
+width = 20.0
+width_curve = SubResource("Curve_fkybt")
+default_color = Color(0.29411766, 0.654902, 0.8784314, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="small_circle"]
+position = Vector2(58, 46)
+scale = Vector2(0.3, 0.3)
+shape = SubResource("CircleShape2D_f1ek2")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="small_circle"]
+position = Vector2(49.999996, 40)
+rotation = 0.5235988
+scale = Vector2(0.58554643, 5.712935)
+mesh = SubResource("QuadMesh_8erm5")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="small_circle"]
+position = Vector2(52.915813, 39.85642)
+rotation = -0.5235988
+scale = Vector2(0.587769, 6.0458055)
+mesh = SubResource("QuadMesh_8erm5")
+
+[node name="MeshInstance2D4" type="MeshInstance2D" parent="small_circle"]
+position = Vector2(61.68178, 39.90844)
+rotation = 0.5235988
+scale = Vector2(0.58554643, 5.712935)
+mesh = SubResource("QuadMesh_8erm5")
+
+[node name="MeshInstance2D5" type="MeshInstance2D" parent="small_circle"]
+position = Vector2(64.597595, 39.76486)
+rotation = -0.5235988
+scale = Vector2(0.587769, 6.0458055)
+mesh = SubResource("QuadMesh_8erm5")
+
+[node name="MeshInstance2D6" type="MeshInstance2D" parent="small_circle"]
+position = Vector2(54.03078, 51.94669)
+rotation = 0.5235988
+scale = Vector2(0.4702539, 3.2852294)
+mesh = SubResource("QuadMesh_8erm5")
+
+[node name="MeshInstance2D7" type="MeshInstance2D" parent="small_circle"]
+position = Vector2(56.000004, 51.99999)
+rotation = -0.7853982
+scale = Vector2(0.5229793, 3.3378038)
+mesh = SubResource("QuadMesh_8erm5")
+
+[node name="MeshInstance2D8" type="MeshInstance2D" parent="small_circle"]
+position = Vector2(57.90701, 51.74436)
+rotation = 0.5235988
+scale = Vector2(0.4702539, 3.7569273)
+mesh = SubResource("QuadMesh_8erm5")
+
+[node name="MeshInstance2D9" type="MeshInstance2D" parent="small_circle"]
+position = Vector2(59.994156, 51.59341)
+rotation = -0.7853982
+scale = Vector2(0.5229793, 3.3378038)
+mesh = SubResource("QuadMesh_8erm5")
+
+[node name="Camera2D" type="Camera2D" parent="small_circle"]
+position = Vector2(54, -127)
+
+[node name="PointLight2D2" type="PointLight2D" parent="small_circle"]
+visible = false
+position = Vector2(61, 17.000002)
+scale = Vector2(7, 7)
+texture = SubResource("GradientTexture2D_tx1dd")
