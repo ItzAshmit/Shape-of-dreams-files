@@ -201,6 +201,7 @@ physics_interpolation_mode = 1
 position = Vector2(52, -94)
 
 [node name="PointLight2D" type="PointLight2D" parent="Circle"]
+visible = false
 position = Vector2(60.999996, 51.999996)
 scale = Vector2(7, 7)
 texture = SubResource("GradientTexture2D_tx1dd")
@@ -251,6 +252,7 @@ texture = SubResource("GradientTexture1D_igrcy")
 position = Vector2(-23.647766, -92.11841)
 
 [node name="PointLight2D" type="PointLight2D" parent="rectangle"]
+visible = false
 position = Vector2(-17, 48.999996)
 scale = Vector2(7, 7)
 texture = SubResource("GradientTexture2D_tx1dd")
@@ -304,6 +306,7 @@ polygon = PackedVector2Array(-2.2770996, 42.301956, 26, 0, 54.502674, 42.301956)
 position = Vector2(23, -111)
 
 [node name="PointLight2D" type="PointLight2D" parent="Triangle"]
+visible = false
 position = Vector2(24, 24.999996)
 scale = Vector2(7, 7)
 texture = SubResource("GradientTexture2D_tx1dd")
