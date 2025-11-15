@@ -11,14 +11,13 @@ config_version=5
 [application]
 
 config/name="Shape changer"
-run/main_scene="uid://dxmtqtq6l4j2y"
+run/main_scene="uid://blrda3i3vqgqg"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://Others/icon.svg"
 
 [autoload]
 
 Global="*res://Scripts/AutoLoads/Global.gd"
-PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 
 [display]
 
@@ -27,7 +26,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg")
+enabled=PackedStringArray()
 
 [file_customization]
 

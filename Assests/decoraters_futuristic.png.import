@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccs3mkyl4q2dm"
-path="res://.godot/imported/pallax background.png-71b11b2d1542d254e02448fb12af2151.ctex"
+uid="uid://v42d2kktlhdv"
+path="res://.godot/imported/decoraters_futuristic.png-a89c41478d0579341c1e5e747f4f8589.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assests/pallax background.png"
-dest_files=["res://.godot/imported/pallax background.png-71b11b2d1542d254e02448fb12af2151.ctex"]
+source_file="res://Assests/decoraters_futuristic.png"
+dest_files=["res://.godot/imported/decoraters_futuristic.png-a89c41478d0579341c1e5e747f4f8589.ctex"]
 
 [params]
 
