@@ -1,11 +1,12 @@
 extends CharacterBody2D
-@onready var the_boss: Sprite2D = $TheBoss
+@onready var the_boss: AnimatedSprite2D = $AnimatedSprite2D
 
 
 
 const SPEED = 600.0
-const JUMP_VELOCITY = -1000.0
+const JUMP_VELOCITY = -800.0
 const SKEW_CHANGE = 100
+var tween = get_tree().create_tween()
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -19,18 +20,14 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("ui_left", "ui_right")
-	var tween = get_tree().create_tween()
 	if direction:
 		velocity.x = direction * SPEED
 		if direction == 1:
+			the_boss.play("default")
 			tween.tween_property(the_boss,"flip_h",false,0)
-			tween.tween_property(the_boss,"skew",0.3,1)
 		if direction == -1:
+			the_boss.play("default")
 			tween.tween_property(the_boss,"flip_h",true,0)
-			tween.tween_property(the_boss,"skew",-0.3,1)
 
-	else:
-		tween.tween_property(the_boss,"skew",0,1)
-		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
