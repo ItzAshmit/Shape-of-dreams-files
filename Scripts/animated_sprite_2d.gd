@@ -1,1 +1,1 @@
-extends AnimatedSprite2D	
+extends AnimatedSprite2D

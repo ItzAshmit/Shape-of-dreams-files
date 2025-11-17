@@ -1,15 +1,17 @@
 extends CharacterBody2D
 @onready var the_boss: AnimatedSprite2D = $AnimatedSprite2D
 
-
-
-const SPEED = 600.0
-const JUMP_VELOCITY = -800.0
-const SKEW_CHANGE = 100
-var tween = get_tree().create_tween()
-
+var animation_played:bool
+var animation_played_2:bool = true
+var is_walking:bool
+const SPEED:float = 600.0
+const JUMP_VELOCITY:float = -750.0
+const SKEW_CHANGE:float = 100
+func _ready() -> void:
+	the_boss.frame = 1
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
+	var tween = get_tree().create_tween()
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
@@ -21,13 +23,28 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
-		velocity.x = direction * SPEED
-		if direction == 1:
-			the_boss.play("default")
-			tween.tween_property(the_boss,"flip_h",false,0)
 		if direction == -1:
-			the_boss.play("default")
-			tween.tween_property(the_boss,"flip_h",true,0)
-
-
+			tween.tween_property(the_boss,"scale",Vector2(-1,the_boss.scale.y),0.2).set_trans(Tween.TRANS_QUAD)
+		if direction == 1:
+			tween.tween_property(the_boss,"scale",Vector2(1,the_boss.scale.y),0.2).set_trans(Tween.TRANS_QUAD)
+		if animation_played_2:
+			the_boss.play("the aura starts")
+			is_walking = true
+			animation_played_2=false
+		velocity.x = direction * SPEED
+		animation_played = false
+		
+	else:
+		tween.kill()
+		is_walking = false
+		if not is_walking and not animation_played:
+			the_boss.play_backwards("the aura starts")
+			animation_played = true
+			animation_played_2=true
+			
+		velocity.x = move_toward(velocity.x, 0, SPEED)
 	move_and_slide()
+	
+func _on_animated_sprite_2d_animation_finished() -> void:
+		if is_walking:
+			the_boss.play("aura farming with cape")
