@@ -1,11 +1,55 @@
-[gd_scene load_steps=80 format=3 uid="uid://cepnvah82t4vb"]
+[gd_scene load_steps=93 format=3 uid="uid://cepnvah82t4vb"]
 
 [ext_resource type="Script" uid="uid://ddmts4jr1n24" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://csbaj4dlsmrth" path="res://Assests/The Boss stick.png" id="2_fkybt"]
 [ext_resource type="Texture2D" uid="uid://d1xhueik6exm2" path="res://Others/Light_lamp.tres" id="3_6t5aa"]
+[ext_resource type="Texture2D" uid="uid://bucw61xuhx7ii" path="res://Assests/body_parts_of_the_boss.png" id="3_fkybt"]
 [ext_resource type="Texture2D" uid="uid://djxuh00eh52aw" path="res://Assests/Spritesheet.png" id="3_x3wgy"]
-[ext_resource type="Script" uid="uid://dkyo7sxw3xdm0" path="res://Scripts/animated_sprite_2d.gd" id="4_3smsa"]
-[ext_resource type="Script" uid="uid://d25xtltpxmuu2" path="res://Scenes/the_ball.gd" id="4_x3wgy"]
+[ext_resource type="Texture2D" uid="uid://cfqwcv6ncwhoo" path="res://Assests/animated_tiles.png" id="6_x3wgy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmr2m"]
+atlas = ExtResource("6_x3wgy")
+region = Rect2(13, 10, 40, 39)
+
+[sub_resource type="Curve" id="Curve_ax3m3"]
+_data = [Vector2(0.029069781, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vgqql"]
+radius = 6.25
+height = 37.50006
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fkybt"]
+radius = 21.0
+height = 182.5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwi16"]
+atlas = ExtResource("3_fkybt")
+region = Rect2(148, 12, 42, 95)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ax3m3"]
+atlas = ExtResource("6_x3wgy")
+region = Rect2(275, 19, 42, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbwqj"]
+atlas = ExtResource("3_fkybt")
+region = Rect2(31, 8, 65, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sweqm"]
+atlas = ExtResource("3_fkybt")
+region = Rect2(22, 77, 14, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7t2e"]
+atlas = ExtResource("3_fkybt")
+region = Rect2(94, 80, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ldla"]
+atlas = ExtResource("3_fkybt")
+region = Rect2(83, 153, 30, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ph33w"]
+atlas = ExtResource("3_fkybt")
+region = Rect2(11, 139, 36, 41)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3smsa"]
 atlas = ExtResource("2_fkybt")
@@ -483,12 +527,9 @@ animations = [{
 "speed": 45.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_x3wgy"]
-radius = 26.98382
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fkybt"]
-radius = 21.0
-height = 182.5
+[sub_resource type="GDScript" id="GDScript_vgqql"]
+script/source = "extends AnimatedSprite2D
+"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ukyrk"]
 atlas = ExtResource("2_fkybt")
@@ -501,6 +542,116 @@ region = Rect2(-7, 20, 46, 42)
 [sub_resource type="CircleShape2D" id="CircleShape2D_h4iuc"]
 radius = 14.142136
 
+[sub_resource type="Animation" id="Animation_fkybt"]
+resource_name = "walking of the boss"
+length = 0.75
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("body parts/thigh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334, 0.53333336),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.43633232, 0.0, 0.43633232]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("body parts/thigh2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.36666667, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -0.6981317007977318, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("body parts/thigh/leg:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.13, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.6981317, 0.43633232]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("body parts/thigh2/leg:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.29),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.6981317007977318]
+}
+
+[sub_resource type="Animation" id="Animation_x3wgy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("body parts/thigh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("body parts/thigh2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("body parts/thigh/leg:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("body parts/thigh2/leg:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3smsa"]
+_data = {
+&"RESET": SubResource("Animation_x3wgy"),
+&"walking of the boss": SubResource("Animation_fkybt")
+}
+
 [node name="Player" type="Node2D"]
 z_index = 5
 scale = Vector2(0.8, 0.8)
@@ -508,52 +659,144 @@ scale = Vector2(0.8, 0.8)
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_cvnsp")
 
-[node name="TheBoss2" type="Sprite2D" parent="CharacterBody2D"]
-texture_filter = 1
-position = Vector2(436, 143)
-rotation = 0.2617994
-scale = Vector2(0.7, 0.7)
-texture = SubResource("AtlasTexture_3smsa")
-
-[node name="TheBoss3" type="Sprite2D" parent="CharacterBody2D"]
-texture_filter = 1
-position = Vector2(420.99997, 198)
-rotation = 0.2617994
-scale = Vector2(0.99999994, 0.99999994)
-texture = SubResource("AtlasTexture_tx1dd")
+[node name="CPUParticles2D" type="CPUParticles2D" parent="CharacterBody2D"]
+position = Vector2(-3.7499988, 56.249985)
+scale = Vector2(1.0758715, 1.0586523)
+amount = 30
+texture = SubResource("AtlasTexture_nmr2m")
+lifetime = 3.0
+speed_scale = 0.2
+local_coords = true
+draw_order = 1
+gravity = Vector2(-1000, -980)
+orbit_velocity_min = -10.0
+orbit_velocity_max = 10.0
+linear_accel_max = 100.0
+scale_amount_min = 0.1
+scale_amount_curve = SubResource("Curve_ax3m3")
+color = Color(0, 0, 0, 1)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-visible = false
-position = Vector2(702, 29)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-texture_filter = 1
-position = Vector2(387, 189)
-sprite_frames = SubResource("SpriteFrames_8erm5")
-animation = &"the aura starts"
-frame = 35
-frame_progress = 1.0
-script = ExtResource("4_3smsa")
+position = Vector2(307.03726, -161.09467)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(396.24997, 263.74997)
-shape = SubResource("CircleShape2D_x3wgy")
+visible = false
+position = Vector2(0.037261963, 87.405396)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_vgqql")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(396.25, 177.49998)
+visible = false
+position = Vector2(0.037231445, 2.4053192)
 rotation = -3.1415925
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("CapsuleShape2D_fkybt")
 
+[node name="PointLight2D" type="PointLight2D" parent="CharacterBody2D"]
+position = Vector2(-7.462738, -5.0946198)
+scale = Vector2(35.040226, 27.340794)
+shadow_enabled = true
+texture = ExtResource("3_6t5aa")
+
+[node name="body parts" type="Node2D" parent="CharacterBody2D"]
+
+[node name="body" type="Sprite2D" parent="CharacterBody2D/body parts"]
+texture_filter = 1
+position = Vector2(-3.087799, -17.594696)
+scale = Vector2(0.86309516, 0.92105246)
+texture = SubResource("AtlasTexture_xwi16")
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="CharacterBody2D/body parts"]
+position = Vector2(-2.4999998, 3.7499995)
+scale = Vector2(0.9999998, 0.9999998)
+amount = 100
+texture = SubResource("AtlasTexture_ax3m3")
+lifetime = 3.0
+emission_shape = 3
+emission_rect_extents = Vector2(15, 60)
+gravity = Vector2(0, 100)
+scale_amount_min = 0.1
+scale_amount_max = 0.5
+color = Color(0, 0, 0, 1)
+
+[node name="head" type="Sprite2D" parent="CharacterBody2D/body parts"]
+texture_filter = 1
+position = Vector2(-1.2127991, -80.094696)
+scale = Vector2(0.99999976, 0.99999976)
+texture = SubResource("AtlasTexture_sbwqj")
+
+[node name="thigh" type="Sprite2D" parent="CharacterBody2D/body parts"]
+visible = false
+texture_filter = 1
+position = Vector2(8.595683, 29.618752)
+scale = Vector2(1.4999999, 1.4999999)
+texture = SubResource("AtlasTexture_sweqm")
+
+[node name="leg" type="Sprite2D" parent="CharacterBody2D/body parts/thigh"]
+visible = false
+texture_filter = 1
+position = Vector2(-0.9184642, 20.735378)
+texture = SubResource("AtlasTexture_r7t2e")
+
+[node name="thigh2" type="Sprite2D" parent="CharacterBody2D/body parts"]
+visible = false
+texture_filter = 1
+position = Vector2(-8.451576, 28.49767)
+scale = Vector2(1.4999999, 1.4999999)
+texture = SubResource("AtlasTexture_sweqm")
+
+[node name="leg" type="Sprite2D" parent="CharacterBody2D/body parts/thigh2"]
+visible = false
+texture_filter = 1
+position = Vector2(-0.9419768, 21.908058)
+texture = SubResource("AtlasTexture_r7t2e")
+
+[node name="elbow" type="Sprite2D" parent="CharacterBody2D/body parts"]
+texture_filter = 1
+position = Vector2(9.1552734e-05, -11.25)
+rotation = 0.5235988
+scale = Vector2(0.99999976, 0.99999976)
+texture = SubResource("AtlasTexture_7ldla")
+
+[node name="hand" type="Sprite2D" parent="CharacterBody2D/body parts/elbow"]
+texture_filter = 1
+position = Vector2(29.411255, 18.001183)
+rotation = -0.2617994
+scale = Vector2(1.0000001, 1.0000001)
+texture = SubResource("AtlasTexture_ph33w")
+
+[node name="TheBoss2" type="Sprite2D" parent="CharacterBody2D/body parts/elbow/hand"]
+texture_filter = 1
+position = Vector2(7.5326433, -57.969975)
+scale = Vector2(0.69999987, 0.69999987)
+texture = SubResource("AtlasTexture_3smsa")
+
+[node name="TheBoss3" type="Sprite2D" parent="CharacterBody2D/body parts/elbow/hand"]
+z_index = -1
+texture_filter = 1
+position = Vector2(11.224545, -0.72492695)
+rotation = 0.26179937
+scale = Vector2(0.9999996, 0.9999996)
+skew = -0.32463124
+texture = SubResource("AtlasTexture_tx1dd")
+
+[node name="cape" type="AnimatedSprite2D" parent="CharacterBody2D/body parts"]
+texture_filter = 1
+position = Vector2(-8.712799, -2.594696)
+scale = Vector2(0.9999998, 0.9999998)
+sprite_frames = SubResource("SpriteFrames_8erm5")
+animation = &"the aura starts"
+script = SubResource("GDScript_vgqql")
+
 [node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
 visible = false
-position = Vector2(133, 2)
+position = Vector2(7.500006, -66.24999)
+scale = Vector2(0.9999998, 0.9999998)
 
 [node name="TheBoss" type="Sprite2D" parent="CharacterBody2D2"]
 texture_filter = 1
 position = Vector2(388, 190)
 texture = SubResource("AtlasTexture_ukyrk")
-script = ExtResource("4_x3wgy")
 
 [node name="TheBoss2" type="Sprite2D" parent="CharacterBody2D2/TheBoss"]
 texture_filter = 1
@@ -567,10 +810,10 @@ position = Vector2(388, 190)
 rotation = 1.5707964
 shape = SubResource("CircleShape2D_h4iuc")
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
-visible = false
-position = Vector2(388, 178)
-scale = Vector2(7.690794, 7.022646)
-texture = ExtResource("3_6t5aa")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../CharacterBody2D")
+libraries = {
+&"": SubResource("AnimationLibrary_3smsa")
+}
 
-[connection signal="animation_finished" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_finished" from="CharacterBody2D/body parts/cape" to="CharacterBody2D" method="_on_animated_sprite_2d_animation_finished"]

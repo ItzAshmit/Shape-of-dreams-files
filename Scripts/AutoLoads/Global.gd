@@ -4,5 +4,5 @@ extends Node
 #-------  Global_variables  -------
 
 #For Player
-var is_walking = true
+var if_is_ball:bool
 #For Player
