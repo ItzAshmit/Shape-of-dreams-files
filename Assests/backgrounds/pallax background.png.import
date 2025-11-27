@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bucw61xuhx7ii"
-path="res://.godot/imported/body_parts_of_the_boss.png-33c4d72916c3a831d4499afe0f8b231f.ctex"
+uid="uid://ccs3mkyl4q2dm"
+path="res://.godot/imported/pallax background.png-621bfa4078979ec8014ac6305849caf9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assests/body_parts_of_the_boss.png"
-dest_files=["res://.godot/imported/body_parts_of_the_boss.png-33c4d72916c3a831d4499afe0f8b231f.ctex"]
+source_file="res://Assests/backgrounds/pallax background.png"
+dest_files=["res://.godot/imported/pallax background.png-621bfa4078979ec8014ac6305849caf9.ctex"]
 
 [params]
 

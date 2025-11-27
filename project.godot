@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Shape changer"
+config/name="The boss"
 run/main_scene="uid://blrda3i3vqgqg"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://Others/icon.svg"
