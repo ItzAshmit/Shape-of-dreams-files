@@ -16,6 +16,7 @@ func _input(_event: InputEvent) -> void:
 	if Global.is_main_body:
 		if Input.is_action_just_pressed("Change_shape"):
 			small_form.global_position = main_body.global_position
+			small_form.z_index = 1
 			small_form.visible = true
 			$small_form/CollisionShape2D.disabled = false
 			$small_form/Camera2D2.enabled = true
@@ -23,9 +24,8 @@ func _input(_event: InputEvent) -> void:
 			$main_body/CollisionShape2D.disabled = true
 			$main_body/Camera2D.enabled = false
 			await get_tree().create_timer(0.1).timeout
-			print(main_body.global_position)
 			Global.is_main_body = false
-
+		
 	if not Global.is_main_body:
 		if Input.is_action_just_pressed("Change_shape"):
 			main_body.global_position = small_form.global_position
