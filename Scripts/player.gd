@@ -1,84 +1,40 @@
-extends CharacterBody2D
-@onready var the_boss: Node2D = $"body parts"
-@onready var cape: AnimatedSprite2D = $"body parts/cape"
-@onready var animation_player: AnimationPlayer = $"../AnimationPlayer"
-@onready var particles: CPUParticles2D = $"CPUParticles2D"
-@onready var particles_2: CPUParticles2D = $CPUParticles2D2
-@onready var the_roatted_aura: Sprite2D = $"body parts/elbow/hand/the roatted aura"
+extends Node2D
 
+@onready var small_form: CharacterBody2D = $small_form
+@onready var main_body: CharacterBody2D = $main_body
 
-
-var animation_played:bool
-var animation_played_2:bool = true
-var is_walking:bool
-const SPEED:float = 600.0
-const JUMP_VELOCITY:float = -750.0
-const SKEW_CHANGE:float = 100
+# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	cape.frame = 1
-	particles.emitting = false
-func _physics_process(delta: float) -> void:
-	if Global.is_main_body:
-		# Add the gravity.
-		var tween = get_tree().create_tween()
-		if not is_on_floor():
-			particles_2.emitting = true
-			velocity += get_gravity() * delta
+	pass # Replace with function body.
 
-		# Handle jump.
-		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-			velocity.y = JUMP_VELOCITY
 
-		# Get the input direction and handle the movement/deceleration.
-		# As good practice, you should replace UI actions with custom gameplay actions.
-		var direction := Input.get_axis("ui_left", "ui_right")
-		if direction:
-			if direction == -1:
-				particles_2.emitting = true
-				tween.tween_property(the_boss,"scale",Vector2(-1,the_boss.scale.y),0.2).set_trans(Tween.TRANS_QUAD)
-				tween.tween_property(the_boss,"rotation",-0.1,0.5)
-				particles.emitting = true
-				particles.gravity.x = -1000.0
-			if direction == 1:
-				particles_2.emitting = true
-				tween.tween_property(the_boss,"scale",Vector2(1,the_boss.scale.y),0.2).set_trans(Tween.TRANS_QUAD)
-				tween.tween_property(the_boss,"rotation",0.1,0.5)
-				particles.emitting = true
-				particles.gravity.x = 1000.0
-			if animation_played_2:
-				cape.play("the aura starts")
-				is_walking = true
-				animation_played_2=false
-			velocity.x = direction * SPEED
-			the_roatted_aura.skew += velocity.x * (velocity.y + 1)/10000
-			the_roatted_aura.rotation += velocity.x * (velocity.y + 1)/10000
-			animation_played = false
-			
-		else:
-			tween.tween_property(the_boss,"rotation",0,0.5)
-			particles.gravity.x = 0
-			particles_2.emitting = false
-			particles.emitting = false 
-			is_walking = false
-			if not is_walking and not animation_played:
-				cape.play_backwards("the aura starts")
-				animation_played = true
-				animation_played_2=true
-				
-			velocity.x = move_toward(velocity.x, 0, SPEED)
-		move_and_slide()
-		
-func _on_animated_sprite_2d_animation_finished() -> void:
-		if is_walking:
-			cape.play("aura farming with cape")
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	pass
+
 func _input(_event: InputEvent) -> void:
 	if Global.is_main_body:
 		if Input.is_action_just_pressed("Change_shape"):
-			self.visible = false
-			$Camera2D.enabled = false
-			$CollisionShape2D.disabled = true
-			$"../CharacterBody2D2".visible = true
-			$"../CharacterBody2D2/CollisionShape2D".disabled = false
-			$"../CharacterBody2D2/Camera2D2".enabled = true
-			await get_tree().process_frame
+			small_form.global_position = main_body.global_position
+			small_form.visible = true
+			$small_form/CollisionShape2D.disabled = false
+			$small_form/Camera2D2.enabled = true
+			main_body.visible = false
+			$main_body/CollisionShape2D.disabled = true
+			$main_body/Camera2D.enabled = false
+			await get_tree().create_timer(0.1).timeout
+			print(main_body.global_position)
 			Global.is_main_body = false
+
+	if not Global.is_main_body:
+		if Input.is_action_just_pressed("Change_shape"):
+			main_body.global_position = small_form.global_position
+			small_form.visible = false
+			$small_form/CollisionShape2D.disabled = true
+			$small_form/Camera2D2.enabled = false
+			main_body.visible = true
+			$main_body/CollisionShape2D.disabled = false
+			$main_body/Camera2D.enabled = true
+			Global.is_main_body = true
+			await get_tree().create_timer(0.1).timeout
+			Global.is_main_body = true

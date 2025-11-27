@@ -24,14 +24,3 @@ func _physics_process(delta: float) -> void:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 
 		move_and_slide()
-func _input(_event: InputEvent) -> void:
-	if not Global.is_main_body:
-		if Input.is_action_pressed("Change_shape"):
-			self.visible = false
-			$Camera2D2.enabled = false
-			$CollisionShape2D.disabled = true
-			$"../CharacterBody2D".visible = true
-			$"../CharacterBody2D/CollisionShape2D".disabled = false
-			$"../CharacterBody2D/Camera2D".enabled = true
-			await get_tree().process_frame
-			Global.is_main_body = true
