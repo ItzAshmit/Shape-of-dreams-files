@@ -1,4 +1,4 @@
-[gd_scene load_steps=124 format=3 uid="uid://cepnvah82t4vb"]
+[gd_scene load_steps=128 format=3 uid="uid://cepnvah82t4vb"]
 
 [ext_resource type="Script" uid="uid://b7plk0t3288ic" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Script" uid="uid://bwtvkopjr4v8g" path="res://Scripts/small_form.gd" id="2_8erm5"]
@@ -9,6 +9,9 @@
 [ext_resource type="Script" uid="uid://cb5noluhuv75e" path="res://Scripts/main_body.gd" id="4_3smsa"]
 [ext_resource type="Texture2D" uid="uid://cfqwcv6ncwhoo" path="res://Assests/animated_tiles.png" id="6_x3wgy"]
 [ext_resource type="Texture2D" uid="uid://bio4jwnu2ciqk" path="res://Assests/The Boss_sprites/Spritesheet.png" id="9_f1ek2"]
+[ext_resource type="Script" uid="uid://c78nmjwehwxm3" path="res://Scripts/health.gd" id="10_tx1dd"]
+[ext_resource type="Texture2D" uid="uid://dyjl0ote5kly3" path="res://Assests/health_bar.png" id="11_pu2lt"]
+[ext_resource type="Texture2D" uid="uid://c55k0p4woj1ep" path="res://Assests/health_bar_2.png" id="12_ukyrk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7dp3o"]
 atlas = ExtResource("6_x3wgy")
@@ -724,8 +727,38 @@ animations = [{
 "speed": 24.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tx1dd"]
+size = Vector2(112.50003, 113.75003)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8erm5"]
 size = Vector2(310.00006, 318.75006)
+
+[sub_resource type="Animation" id="Animation_feq18"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("body parts/AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("body parts/elbow/hand/Node2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_bjdqd"]
 resource_name = "attacking"
@@ -753,33 +786,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_feq18"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("body parts/AnimatedSprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("body parts/elbow/hand/Node2D:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_wcnj3"]
@@ -853,7 +859,7 @@ script = ExtResource("1_cvnsp")
 
 [node name="small_form" type="CharacterBody2D" parent="."]
 scale = Vector2(1.5, 1.5)
-collision_layer = 129
+collision_layer = 161
 collision_mask = 129
 script = ExtResource("2_8erm5")
 
@@ -907,6 +913,7 @@ shadow_enabled = true
 texture = ExtResource("3_6t5aa")
 
 [node name="main_body" type="CharacterBody2D" parent="."]
+collision_layer = 33
 script = ExtResource("4_3smsa")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="main_body"]
@@ -1036,7 +1043,15 @@ scale = Vector2(0.99999994, 0.99999994)
 sprite_frames = SubResource("SpriteFrames_jmelf")
 animation = &"new_animation"
 
+[node name="Area2D" type="Area2D" parent="main_body/body parts"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main_body/body parts/Area2D"]
+position = Vector2(46.249992, -4.3750005)
+scale = Vector2(0.9999995, 0.9999995)
+shape = SubResource("RectangleShape2D_tx1dd")
+
 [node name="Area2D" type="Area2D" parent="main_body"]
+visible = false
 collision_layer = 128
 collision_mask = 128
 
@@ -1055,7 +1070,34 @@ libraries = {
 &"": SubResource("AnimationLibrary_3smsa")
 }
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+visible = false
+offset_left = 74.0
+offset_top = 33.0
+offset_right = 126.0
+offset_bottom = 56.0
+text = "Health"
+
+[node name="Health" type="Node2D" parent="CanvasLayer"]
+script = ExtResource("10_tx1dd")
+is_player = true
+metadata/_custom_type_script = "uid://c78nmjwehwxm3"
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer"]
+offset_left = 24.0
+offset_top = 17.0
+offset_right = 1010.0
+offset_bottom = 339.0
+scale = Vector2(0.5, 0.5)
+fill_mode = 6
+texture_under = ExtResource("11_pu2lt")
+texture_progress = ExtResource("12_ukyrk")
+texture_progress_offset = Vector2(0, 60)
+
 [connection signal="animation_finished" from="main_body/body parts/cape" to="main_body" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="main_body/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="main_body/Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="timeout" from="main_body/Timer" to="main_body" method="_on_timer_timeout"]
+[connection signal="is_player_dead" from="CanvasLayer/Health" to="main_body" method="_on_health_is_player_dead"]

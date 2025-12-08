@@ -13,6 +13,7 @@ var is_walking:bool
 var SPEED:float = 600.0
 const JUMP_VELOCITY:float = -750.0
 const SKEW_CHANGE:float = 100
+
 func _ready() -> void:
 	cape.frame = 1
 	$"body parts/AnimatedSprite2D".frame = 6
@@ -50,6 +51,7 @@ func _physics_process(delta: float) -> void:
 ###############attacking---
 		if Input.is_action_just_pressed("attack"):
 			randomize()
+			print("attacked")
 			var random_chance:float = randf()
 			if random_chance <= 0.334:
 				animation_player.play("attacking")
@@ -57,9 +59,14 @@ func _physics_process(delta: float) -> void:
 				animation_player.play("attacking_2")
 			else:
 				animation_player.play("attacking_3")
-		
-						
-						
+			var bodies_in_range = $"body parts/Area2D".get_overlapping_bodies()
+			for i in bodies_in_range:
+				if i.has_method("taking_damage"):
+					i.taking_damage(Global.player_melee_attack)
+			Global.melee_attacked = true
+			await get_tree().create_timer(0.5).timeout
+			Global.melee_attacked = false
+				
 						
 						
 						
@@ -122,3 +129,9 @@ func _on_timer_timeout() -> void:
 	await get_tree().create_timer(1,false).timeout
 	can_dash = true
 	particles_2.initial_velocity_max = 0
+
+
+
+
+func _on_health_is_player_dead() -> void:
+	print("dead")

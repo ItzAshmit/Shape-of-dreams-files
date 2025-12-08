@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cv31wlgafqrhg"]
+[gd_scene load_steps=9 format=3 uid="uid://cv31wlgafqrhg"]
 
 [ext_resource type="Script" uid="uid://npr1517ftn6f" path="res://bot_dash_enemy.gd" id="1_fjq0n"]
 [ext_resource type="Texture2D" uid="uid://ho57d5qtld1j" path="res://Assests/enemy/enemy_sheet.png" id="2_niclw"]
+[ext_resource type="Script" uid="uid://c78nmjwehwxm3" path="res://Scripts/health.gd" id="3_niclw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mp4eo"]
 radius = 73.0
@@ -11,17 +12,65 @@ height = 348.0
 atlas = ExtResource("2_niclw")
 region = Rect2(0, 158, 188, 354)
 
+[sub_resource type="Gradient" id="Gradient_niclw"]
+offsets = PackedFloat32Array(0.40666667, 0.5466667, 0.68, 0.88666666)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mp4eo"]
+gradient = SubResource("Gradient_niclw")
+fill = 1
+fill_from = Vector2(1, 0.4813084)
+fill_to = Vector2(0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fjq0n"]
+size = Vector2(93, 339)
+
 [node name="enemy" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+collision_mask = 2
 script = ExtResource("1_fjq0n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+visible = false
 position = Vector2(-5, 2)
 shape = SubResource("CapsuleShape2D_mp4eo")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+skew = -0.05235988
 texture = SubResource("AtlasTexture_w2407")
 
 [node name="RayCast2D" type="RayCast2D" parent="CharacterBody2D"]
-target_position = Vector2(-773, 0)
+position = Vector2(-33, -123)
+rotation = -0.7853982
+scale = Vector2(0.8922556, 29.430855)
+target_position = Vector2(-441.41888, -0.024025917)
+collision_mask = 32
+
+[node name="PointLight2D" type="PointLight2D" parent="CharacterBody2D"]
+position = Vector2(-177.34851, 19.348507)
+rotation = -3.926991
+scale = Vector2(6.5518913, 0.50904644)
+energy = 2.0
+texture = SubResource("GradientTexture2D_mp4eo")
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+position = Vector2(-30, 3)
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+position = Vector2(-16.5, 6.5)
+shape = SubResource("RectangleShape2D_fjq0n")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="Health" type="Node2D" parent="."]
+script = ExtResource("3_niclw")
+HP = 40.0
+metadata/_custom_type_script = "uid://c78nmjwehwxm3"
+
+[connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="CharacterBody2D" method="_on_timer_timeout"]
+[connection signal="dead" from="Health" to="CharacterBody2D" method="_on_health_dead"]

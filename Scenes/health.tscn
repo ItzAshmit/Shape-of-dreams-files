@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://mxu42fjph6hx"]
+
+[ext_resource type="Script" uid="uid://c78nmjwehwxm3" path="res://Scripts/health.gd" id="1_1nx07"]
+
+[node name="health" type="Node2D"]
+scale = Vector2(0.58071274, 0.76451725)
+script = ExtResource("1_1nx07")
+HP = 50.0
