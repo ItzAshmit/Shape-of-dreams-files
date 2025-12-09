@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 var is_dead:bool = false
 var SPEED = -500.0
-
-
+var jump:float = -500
+@onready var player = get_tree().get_first_node_in_group("player")
 func _physics_process(delta: float) -> void:
 	if not is_dead:
 		if not is_on_floor():
@@ -13,8 +13,9 @@ func _physics_process(delta: float) -> void:
 		if is_on_wall():
 			SPEED = SPEED * -1
 			scale.x = scale.x * -1
+		if is_on_wall() and is_on_floor():
+			velocity.y = jump
 		move_and_slide()
-		
 func _on_health_dead() -> void:
 	is_dead = true
 	$Area2D.monitorable = false
@@ -32,6 +33,20 @@ func taking_damage(damage: int) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	print("damaged")
 	Global.main_player_HP -= 5
 	print(Global.main_player_HP)
+
+
+
+
+
+
+func _on_area_2d_2_body_entered(body: Node2D) -> void:
+	var distance = Global.player_position - global_position
+	velocity = velocity.move_toward(distance + global_position, SPEED)
+
+
+func _on_area_2d_2_body_exited(body: Node2D) -> void:
+	await get_tree().create_timer(0.5).timeout
+	var distance = global_position - Global.player_position
+	velocity = velocity.move_toward(distance + global_position, SPEED * 3)

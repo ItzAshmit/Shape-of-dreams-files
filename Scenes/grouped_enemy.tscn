@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://lf0714dxx0lv"]
+[gd_scene load_steps=8 format=3 uid="uid://lf0714dxx0lv"]
 
 [ext_resource type="Script" uid="uid://cbnen6gc7h2w3" path="res://Scripts/grouped_enemy.gd" id="1_b4wro"]
 [ext_resource type="Texture2D" uid="uid://ho57d5qtld1j" path="res://Assests/enemy/enemy_sheet.png" id="2_t0s8a"]
@@ -14,6 +14,9 @@ region = Rect2(245, 175, 123, 127)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b4wro"]
 size = Vector2(104, 102)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b4wro"]
+radius = 300.53287
 
 [node name="Grouped_enemy" type="Node2D"]
 scale = Vector2(0.5, 0.5)
@@ -36,10 +39,18 @@ collision_mask = 32
 position = Vector2(-8, 3)
 shape = SubResource("RectangleShape2D_b4wro")
 
+[node name="Area2D2" type="Area2D" parent="CharacterBody2D"]
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D2"]
+shape = SubResource("CircleShape2D_b4wro")
+
 [node name="Health" type="Node2D" parent="."]
 script = ExtResource("3_o4kao")
 HP = 20.0
 metadata/_custom_type_script = "uid://c78nmjwehwxm3"
 
 [connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="CharacterBody2D/Area2D2" to="CharacterBody2D" method="_on_area_2d_2_body_entered"]
+[connection signal="body_exited" from="CharacterBody2D/Area2D2" to="CharacterBody2D" method="_on_area_2d_2_body_exited"]
 [connection signal="dead" from="Health" to="CharacterBody2D" method="_on_health_dead"]

@@ -110,7 +110,7 @@ func _physics_process(delta: float) -> void:
 				
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 		move_and_slide()
-
+		Global.player_position = global_position
 
 
 
@@ -134,4 +134,4 @@ func _on_timer_timeout() -> void:
 
 
 func _on_health_is_player_dead() -> void:
-	print("dead")
+	pass
