@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var particles_2: CPUParticles2D = $CPUParticles2D2
 @onready var the_roatted_aura: Sprite2D = $"body parts/elbow/hand/Node2D/the roatted aura"
 
+var list_of_i = []
 var can_dash:bool = true
 var animation_played:bool
 var animation_played_2:bool = true
@@ -62,10 +63,12 @@ func _physics_process(delta: float) -> void:
 			var bodies_in_range = $"body parts/Area2D".get_overlapping_bodies()
 			for i in bodies_in_range:
 				if i.has_method("taking_damage"):
-					i.taking_damage(Global.player_melee_attack)
+					list_of_i.append(i)
+					list_of_i[-1].taking_damage(Global.player_melee_attack)
 			Global.melee_attacked = true
 			await get_tree().create_timer(0.5).timeout
 			Global.melee_attacked = false
+			list_of_i =[]
 				
 						
 						

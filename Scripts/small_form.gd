@@ -29,5 +29,6 @@ func _physics_process(delta: float) -> void:
 		else:
 			tween.kill()
 			velocity.x = move_toward(velocity.x, 0, SPEED)
-
+		
 		move_and_slide()
+		Global.player_position = global_position

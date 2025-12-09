@@ -47,6 +47,5 @@ func _on_area_2d_2_body_entered(body: Node2D) -> void:
 
 
 func _on_area_2d_2_body_exited(body: Node2D) -> void:
-	await get_tree().create_timer(0.5).timeout
-	var distance = global_position - Global.player_position
-	velocity = velocity.move_toward(distance + global_position, SPEED * 3)
+		var distance = Global.player_position - global_position
+		velocity = velocity.move_toward(distance - global_position, SPEED * 2)
