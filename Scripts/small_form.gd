@@ -32,3 +32,6 @@ func _physics_process(delta: float) -> void:
 		
 		move_and_slide()
 		Global.player_position = global_position
+		
+func I_am_player():
+	pass

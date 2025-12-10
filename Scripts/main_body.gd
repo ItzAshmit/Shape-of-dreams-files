@@ -6,7 +6,7 @@ extends CharacterBody2D
 @onready var particles_2: CPUParticles2D = $CPUParticles2D2
 @onready var the_roatted_aura: Sprite2D = $"body parts/elbow/hand/Node2D/the roatted aura"
 
-var list_of_i = []
+var can_melee_attack:bool = true
 var can_dash:bool = true
 var animation_played:bool
 var animation_played_2:bool = true
@@ -16,6 +16,7 @@ const JUMP_VELOCITY:float = -750.0
 const SKEW_CHANGE:float = 100
 
 func _ready() -> void:
+	$"../CanvasLayer/TextureProgressBar".visible = true
 	cape.frame = 1
 	$"body parts/AnimatedSprite2D".frame = 6
 	particles.emitting = false
@@ -49,27 +50,7 @@ func _physics_process(delta: float) -> void:
 						$Timer.start()
 						
 						
-###############attacking---
-		if Input.is_action_just_pressed("attack"):
-			randomize()
-			print("attacked")
-			var random_chance:float = randf()
-			if random_chance <= 0.334:
-				animation_player.play("attacking")
-			elif random_chance <= 0.668:
-				animation_player.play("attacking_2")
-			else:
-				animation_player.play("attacking_3")
-			var bodies_in_range = $"body parts/Area2D".get_overlapping_bodies()
-			for i in bodies_in_range:
-				if i.has_method("taking_damage"):
-					list_of_i.append(i)
-					list_of_i[-1].taking_damage(Global.player_melee_attack)
-			Global.melee_attacked = true
-			await get_tree().create_timer(0.5).timeout
-			Global.melee_attacked = false
-			list_of_i =[]
-				
+
 						
 						
 						
@@ -137,4 +118,33 @@ func _on_timer_timeout() -> void:
 
 
 func _on_health_is_player_dead() -> void:
+	Global.is_main_body = true
+	Global.main_player_HP = 100
+	get_tree().reload_current_scene()
+
+	
+	
+	
+func _input(_event: InputEvent) -> void:
+###############attacking---
+		if can_melee_attack:
+			if Input.is_action_just_pressed("attack"):
+				randomize()
+				var random_chance:float = randf()
+				var bodies_in_range = $"body parts/Area2D".get_overlapping_bodies()
+				for i in bodies_in_range:
+					if i.has_method("taking_damage"):
+						i.taking_damage(Global.player_melee_attack)
+						break
+				if random_chance <= 0.334:
+					animation_player.play("attacking")
+				elif random_chance <= 0.668:
+					animation_player.play("attacking_2")
+				else:
+					animation_player.play("attacking_3")
+				can_melee_attack = false
+				await get_tree().create_timer(0.74).timeout
+				can_melee_attack = true
+			
+func I_am_player():
 	pass

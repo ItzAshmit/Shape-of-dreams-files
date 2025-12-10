@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://blrda3i3vqgqg"]
+[gd_scene load_steps=39 format=4 uid="uid://blrda3i3vqgqg"]
 
 [ext_resource type="Texture2D" uid="uid://v42d2kktlhdv" path="res://Assests/decoraters_futuristic.png" id="1_uebcy"]
 [ext_resource type="Texture2D" uid="uid://cfqwcv6ncwhoo" path="res://Assests/animated_tiles.png" id="2_vo4si"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://d1xhueik6exm2" path="res://Others/Light_lamp.tres" id="7_w7duu"]
 [ext_resource type="PackedScene" uid="uid://cv31wlgafqrhg" path="res://Scenes/bot_dash.tscn" id="8_15ip0"]
 [ext_resource type="PackedScene" uid="uid://lf0714dxx0lv" path="res://Scenes/grouped_enemy.tscn" id="9_gq66i"]
+[ext_resource type="Script" uid="uid://cr0fv784yw2cb" path="res://Scripts/void.gd" id="10_1rklt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_15ip0"]
 texture = ExtResource("4_w7duu")
@@ -281,6 +282,8 @@ fill = 1
 fill_from = Vector2(0.5046729, 0.5)
 fill_to = Vector2(0.69158876, 1)
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pwbbu"]
+
 [node name="FuturisticWorld" type="Node2D"]
 
 [node name="tilemaps" type="Node" parent="."]
@@ -408,3 +411,13 @@ position = Vector2(918, 818)
 
 [node name="Grouped_enemy3" parent="enemies/Grouped enemies" instance=ExtResource("9_gq66i")]
 position = Vector2(317, 840)
+
+[node name="void" type="Area2D" parent="."]
+position = Vector2(31, -335)
+script = ExtResource("10_1rklt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="void"]
+position = Vector2(-2307, 2307)
+shape = SubResource("WorldBoundaryShape2D_pwbbu")
+
+[connection signal="body_entered" from="void" to="void" method="_on_body_entered"]
