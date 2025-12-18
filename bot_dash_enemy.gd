@@ -54,5 +54,7 @@ func _on_health_dead() -> void:
 
 
 func taking_damage(damage: int) -> void:
+	self.modulate = Color(1.0, 0.0, 0.0, 1.0)
 	$"../Health".HP -= damage
-	print($"../Health".HP)
+	var tween = get_tree().create_tween()
+	tween.tween_property(self,"modulate",Color(1.0, 1.0, 1.0, 1.0),0.5)

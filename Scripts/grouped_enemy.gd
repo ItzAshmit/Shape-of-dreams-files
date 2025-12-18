@@ -24,15 +24,17 @@ func _on_health_dead() -> void:
 	tween.tween_property(self,"modulate",Color(0.0, 0.0, 0.0, 1.0),0.2)
 	$CollisionShape2D.disabled = true
 func taking_damage(damage: int) -> void:
-	$"../Health".HP =- damage
-	print($"../Health".HP)
+	self.modulate = Color(1.0, 0.0, 0.0, 1.0)
+	$"../Health".HP -= damage
+	var tween = get_tree().create_tween()
+	tween.tween_property(self,"modulate",Color(1.0, 1.0, 1.0, 1.0),0.5)
 
 
 
 
 
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(_body: Node2D) -> void:
 	Global.main_player_HP -= 5
 	print(Global.main_player_HP)
 
@@ -41,11 +43,11 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 
 
-func _on_area_2d_2_body_entered(body: Node2D) -> void:
+func _on_area_2d_2_body_entered(_body: Node2D) -> void:
 	var distance = Global.player_position - global_position
 	velocity = velocity.move_toward(distance + global_position, SPEED)
 
 
-func _on_area_2d_2_body_exited(body: Node2D) -> void:
+func _on_area_2d_2_body_exited(_body: Node2D) -> void:
 		var distance = Global.player_position - global_position
 		velocity = velocity.move_toward(distance - global_position, SPEED * 2)

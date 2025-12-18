@@ -5,7 +5,7 @@ extends Node2D
 @export var melee_attcked:bool = false
 signal dead
 signal is_player_dead
-signal taking_damage(damage: int)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if is_player:
