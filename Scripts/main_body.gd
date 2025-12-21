@@ -24,12 +24,6 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if Global.is_main_body:
 		var direction := Input.get_axis("left", "right")
-		
-		
-		
-		
-		
-		
 ###############DASHHHH---
 		if Input.is_action_just_pressed("dash"):
 			if can_dash:
@@ -49,25 +43,13 @@ func _physics_process(delta: float) -> void:
 						can_dash = false
 						$Timer.start()
 						
-						
-
-						
-						
-						
 ###############MOVEMENT---
 		# Handle jump.
 		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
-
 			
 			
-			
-		# Add the gravity.
 		var tween = get_tree().create_tween()
-		if not is_on_floor():
-			velocity += get_gravity() * delta
-			
-			
 		if direction:
 			tween.tween_property(the_boss,"scale",Vector2(1 * direction,the_boss.scale.y),0.2).set_trans(Tween.TRANS_QUAD)
 			tween.tween_property(the_boss,"rotation",0.1 * direction,0.5)
@@ -83,6 +65,8 @@ func _physics_process(delta: float) -> void:
 			the_roatted_aura.rotation += velocity.x * (velocity.y + 1)/10000
 			animation_played = false
 			
+			
+			
 		else:
 			tween.tween_property(the_boss,"rotation",0,0.5)
 			particles.gravity.x = 0
@@ -95,6 +79,12 @@ func _physics_process(delta: float) -> void:
 				
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 		move_and_slide()
+			
+			
+			
+		# Add the gravity.
+		if not is_on_floor():
+			velocity += get_gravity() * delta
 		Global.player_position = global_position
 
 
@@ -119,14 +109,16 @@ func _on_timer_timeout() -> void:
 
 
 func _on_health_is_player_dead() -> void:
-	Global.is_main_body = true
-	Global.main_player_HP = 100
-	get_tree().reload_current_scene()
+	pass
+	#Global.is_main_body = true
+	#Global.main_player_HP = 100
+	#get_tree().reload_current_scene()
 
 	
 	
 	
 func _input(_event: InputEvent) -> void:
+	if Global.is_main_body:
 ###############attacking---
 		if can_melee_attack:
 			if Input.is_action_just_pressed("attack"):
@@ -146,6 +138,11 @@ func _input(_event: InputEvent) -> void:
 				can_melee_attack = false
 				await get_tree().create_timer(0.74).timeout
 				can_melee_attack = true
+
+
+			
+			
+			
 			
 func I_am_player():
 	pass
