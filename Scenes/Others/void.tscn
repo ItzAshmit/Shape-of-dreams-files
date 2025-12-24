@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://djecvlixthiku"]
+
+[ext_resource type="Script" uid="uid://cr0fv784yw2cb" path="res://Scripts/void.gd" id="1_w4gac"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pwbbu"]
+
+[node name="void" type="Area2D"]
+script = ExtResource("1_w4gac")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(11, 0)
+shape = SubResource("WorldBoundaryShape2D_pwbbu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

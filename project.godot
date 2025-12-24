@@ -24,6 +24,10 @@ Global="*res://Scripts/AutoLoads/Global.gd"
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[editor_plugins]
+
+enabled=PackedStringArray()
+
 [file_customization]
 
 folder_colors={
@@ -66,3 +70,7 @@ right={
 [physics]
 
 2d/physics_engine="Rapier2D"
+
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true

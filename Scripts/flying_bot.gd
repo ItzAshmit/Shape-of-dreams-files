@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var is_dead:bool
 var SPEED = 2
-
+var direction:float = 1
 
 
 	
@@ -12,10 +12,7 @@ func _physics_process(delta: float) -> void:
 			atttttttackkkkk()
 		if not is_on_floor():
 			velocity += (get_gravity() * delta)/6
-			velocity.x += SPEED
-		if is_on_wall() or is_on_floor():
-			SPEED = SPEED * -1
-			velocity.y += -10
+			velocity.x += SPEED * direction
 		if $RayCast2D2.is_colliding() or is_on_floor():
 			velocity.y += -5
 		if $RayCast2D.is_colliding():
@@ -32,8 +29,9 @@ func atttttttackkkkk():
 
 func _on_area_2d_body_exited(_body: Node2D) -> void:
 	randomize()
-	velocity = Vector2(randf(),velocity.y * randf_range(1,-1))
-	SPEED = SPEED * -1
+	direction *= -1
+	velocity.x = SPEED * direction
+	velocity.y = randf_range(100 * 0.5, -100 * 0.2)
 
 
 func taking_damage(damage: int) -> void:

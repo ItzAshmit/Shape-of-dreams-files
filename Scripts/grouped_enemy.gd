@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
 var is_dead:bool = false
-var SPEED = -500.0
+var direction:int = 1
+var SPEED = 500.0
 var jump:float = -500
-@onready var player = get_tree().get_first_node_in_group("player")
 func _physics_process(delta: float) -> void:
 	if not is_inside_tree():
 		return
@@ -14,7 +14,8 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.x += SPEED * delta
 		if is_on_wall():
-			SPEED = SPEED * -1
+			direction *= -1
+			SPEED = SPEED * direction
 			scale.x = scale.x * -1
 		if is_on_wall() and is_on_floor():
 			velocity.y = jump
@@ -37,8 +38,9 @@ func taking_damage(damage: int) -> void:
 
 
 
-func _on_area_2d_body_entered(_body: Node2D) -> void:
-	Global.main_player_HP -= 5
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	Global.main_player_HP -= 1
+	body.get_parent().apply_knockback(global_position,1000)
 
 
 
@@ -46,9 +48,11 @@ func _on_area_2d_body_entered(_body: Node2D) -> void:
 
 
 func _on_area_2d_2_body_entered(_body: Node2D) -> void:
-	var distance = Global.player_position + global_position
-	velocity = velocity.move_toward(distance - global_position, SPEED * 1.7)
+	velocity = Vector2.ZERO
+	var direction_2 = global_position.direction_to(Global.player_position + Vector2(0,-40)).normalized()
+	velocity += (direction_2 * SPEED * direction)
 
 func _on_area_2d_2_body_exited(_body: Node2D) -> void:
-	var distance = Global.player_position - global_position
-	velocity = velocity.move_toward(distance - global_position, SPEED * 2)
+	velocity = Vector2.ZERO
+	var direction_2 = global_position.direction_to(Global.player_position + Vector2(0,-40)).normalized()
+	velocity += (direction_2 * SPEED * direction)
