@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [gd_scene load_steps=40 format=4 uid="uid://dpe7k54ep8o6n"]
 =======
 [gd_scene load_steps=40 format=4 uid="uid://blrda3i3vqgqg"]
@@ -19,6 +20,9 @@
 =======
 [gd_scene load_steps=40 format=4 uid="uid://blrda3i3vqgqg"]
 >>>>>>> parent of dda01e1 (Physics engine changed)
+=======
+[gd_scene load_steps=39 format=4 uid="uid://blrda3i3vqgqg"]
+>>>>>>> parent of 92bb47b (fyler bot added)
 
 [ext_resource type="Texture2D" uid="uid://v42d2kktlhdv" path="res://Assests/decoraters_futuristic.png" id="1_uebcy"]
 [ext_resource type="Texture2D" uid="uid://cfqwcv6ncwhoo" path="res://Assests/animated_tiles.png" id="2_vo4si"]
@@ -30,7 +34,6 @@
 [ext_resource type="PackedScene" uid="uid://cv31wlgafqrhg" path="res://Scenes/bot_dash.tscn" id="8_15ip0"]
 [ext_resource type="PackedScene" uid="uid://lf0714dxx0lv" path="res://Scenes/grouped_enemy.tscn" id="9_gq66i"]
 [ext_resource type="Script" uid="uid://cr0fv784yw2cb" path="res://Scripts/void.gd" id="10_1rklt"]
-[ext_resource type="PackedScene" uid="uid://yc5a5xl018yo" path="res://Scenes/flyer_ bot.tscn" id="11_pwbbu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_15ip0"]
 texture = ExtResource("4_w7duu")
@@ -434,12 +437,11 @@ position = Vector2(918, 818)
 position = Vector2(317, 840)
 
 [node name="void" type="Area2D" parent="."]
-position = Vector2(-2434, 1837)
+position = Vector2(31, -335)
 script = ExtResource("10_1rklt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="void"]
-position = Vector2(11, 0)
+position = Vector2(-2307, 2307)
 shape = SubResource("WorldBoundaryShape2D_pwbbu")
 
-[node name="Node2D" parent="." instance=ExtResource("11_pwbbu")]
-position = Vector2(-2593, -388)
+[connection signal="body_entered" from="void" to="void" method="_on_body_entered"]

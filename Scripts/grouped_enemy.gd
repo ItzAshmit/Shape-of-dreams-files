@@ -25,10 +25,8 @@ func _on_health_dead() -> void:
 	tween.tween_property(self,"modulate",Color(0.0, 0.0, 0.0, 1.0),0.2)
 	$CollisionShape2D.disabled = true
 func taking_damage(damage: int) -> void:
-	self.modulate = Color(1.0, 0.0, 0.0, 1.0)
-	$"../Health".HP -= damage
-	var tween = get_tree().create_tween()
-	tween.tween_property(self,"modulate",Color(1.0, 1.0, 1.0, 1.0),0.5)
+	$"../Health".HP =- damage
+	print($"../Health".HP)
 
 
 
@@ -36,11 +34,14 @@ func taking_damage(damage: int) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
+<<<<<<< HEAD
 	Global.main_player_HP -= 1
 	body.get_parent().apply_knockback(global_position,1000)
 <<<<<<< HEAD
 =======
 func _on_area_2d_body_entered(_body: Node2D) -> void:
+=======
+>>>>>>> parent of 92bb47b (fyler bot added)
 	Global.main_player_HP -= 5
 	print(Global.main_player_HP)
 <<<<<<< HEAD
@@ -78,6 +79,7 @@ func _on_area_2d_body_entered(_body: Node2D) -> void:
 
 
 
+<<<<<<< HEAD
 func _on_area_2d_2_body_entered(_body: Node2D) -> void:
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -118,11 +120,14 @@ func _on_area_2d_2_body_exited(_body: Node2D) -> void:
 	velocity += (direction_2 * SPEED * direction)
 <<<<<<< HEAD
 =======
+=======
+func _on_area_2d_2_body_entered(body: Node2D) -> void:
+>>>>>>> parent of 92bb47b (fyler bot added)
 	var distance = Global.player_position - global_position
 	velocity = velocity.move_toward(distance + global_position, SPEED)
 
 
-func _on_area_2d_2_body_exited(_body: Node2D) -> void:
+func _on_area_2d_2_body_exited(body: Node2D) -> void:
 		var distance = Global.player_position - global_position
 		velocity = velocity.move_toward(distance - global_position, SPEED * 2)
 >>>>>>> parent of dda01e1 (Physics engine changed)

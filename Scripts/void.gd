@@ -71,10 +71,18 @@ func _on_body_exited(body: Node2D) -> void:
 =======
 >>>>>>> parent of dda01e1 (Physics engine changed)
 
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.has_method("I_am_player"):
-		print("implayer")
 		Global.main_player_HP -= 100
 	else:
 		body.queue_free()
