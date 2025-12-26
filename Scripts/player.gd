@@ -10,22 +10,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if Global.is_player_for_teleporter:
-		Global.is_player_for_teleporter = true
-		var tween = get_tree().create_tween()
-		is_in_area = true
-		tween.tween_property($small_form,"modulate",Color(1,1,1,0.5),0.3).set_trans(Tween.TRANS_CIRC)
-		await get_tree().create_timer(0.5,false).timeout
-		tween.kill()
-	else:
-		Global.is_player_for_teleporter = false
-		var tween = get_tree().create_tween()
-		is_in_area = false
-		tween.tween_property($small_form,"modulate",Color(1,1,1,1),0.3).set_trans(Tween.TRANS_CIRC)
-		await get_tree().create_timer(0.5,false).timeout
-		tween.kill()
-		
-		
+	pass
 func _input(_event: InputEvent) -> void:
 	if Global.has_power_to_change_form:
 		if Global.is_main_body:
@@ -60,10 +45,15 @@ func _input(_event: InputEvent) -> void:
 
 
 
-func _on_area_2d_body_entered(_body: Node2D) -> void:
-	Global.is_player_for_teleporter = true
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	var tween = get_tree().create_tween()
+	is_in_area = true
+	tween.tween_property(body,"modulate",Color(1,1,1,0.5),0.3).set_trans(Tween.TRANS_CIRC)
+	await get_tree().create_timer(0.5,false).timeout
+	tween.kill()
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -103,12 +93,15 @@ func apply_knockback(from_position: Vector2, force: float) -> void:
 =======
 =======
 >>>>>>> parent of dda01e1 (Physics engine changed)
+=======
+>>>>>>> parent of dda01e1 (Physics engine changed)
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	var tween = get_tree().create_tween()
 	is_in_area = false
 	tween.tween_property(body,"modulate",Color(1,1,1,1),0.3).set_trans(Tween.TRANS_CIRC)
 	await get_tree().create_timer(0.5,false).timeout
 	tween.kill()
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> parent of dda01e1 (Physics engine changed)
 =======
@@ -126,3 +119,5 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 >>>>>>> parent of 28409a8 (i will fix it i hope)
 =======
 >>>>>>> parent of 24fac24 (hmmm)
+=======
+>>>>>>> parent of dda01e1 (Physics engine changed)

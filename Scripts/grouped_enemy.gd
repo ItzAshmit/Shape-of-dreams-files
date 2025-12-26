@@ -5,12 +5,9 @@ var direction:int = 1
 var SPEED = 500.0
 var jump:float = -500
 func _physics_process(delta: float) -> void:
-	if not is_inside_tree():
-		return
 	if not is_dead:
 		if not is_on_floor():
-			if self:
-				velocity += get_gravity() * delta
+			velocity += get_gravity() * delta
 		else:
 			velocity.x += SPEED * delta
 		if is_on_wall():
@@ -47,6 +44,7 @@ func _on_area_2d_body_entered(_body: Node2D) -> void:
 	Global.main_player_HP -= 5
 	print(Global.main_player_HP)
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of dda01e1 (Physics engine changed)
 =======
 >>>>>>> parent of dda01e1 (Physics engine changed)
@@ -63,6 +61,8 @@ func _on_area_2d_body_entered(_body: Node2D) -> void:
 >>>>>>> parent of 28409a8 (i will fix it i hope)
 =======
 >>>>>>> parent of 24fac24 (hmmm)
+=======
+>>>>>>> parent of dda01e1 (Physics engine changed)
 
 
 
@@ -79,6 +79,7 @@ func _on_area_2d_2_body_entered(_body: Node2D) -> void:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 24fac24 (hmmm)
 =======
@@ -144,3 +145,12 @@ func _on_area_2d_2_body_exited(_body: Node2D) -> void:
 >>>>>>> parent of 28409a8 (i will fix it i hope)
 =======
 >>>>>>> parent of 24fac24 (hmmm)
+=======
+	var distance = Global.player_position - global_position
+	velocity = velocity.move_toward(distance + global_position, SPEED)
+
+
+func _on_area_2d_2_body_exited(_body: Node2D) -> void:
+		var distance = Global.player_position - global_position
+		velocity = velocity.move_toward(distance - global_position, SPEED * 2)
+>>>>>>> parent of dda01e1 (Physics engine changed)
