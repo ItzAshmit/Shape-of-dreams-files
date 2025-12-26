@@ -63,6 +63,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 24fac24 (hmmm)
 =======
@@ -95,12 +96,15 @@ func apply_knockback(from_position: Vector2, force: float) -> void:
 >>>>>>> parent of dda01e1 (Physics engine changed)
 =======
 >>>>>>> parent of dda01e1 (Physics engine changed)
+=======
+>>>>>>> parent of dda01e1 (Physics engine changed)
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	var tween = get_tree().create_tween()
 	is_in_area = false
 	tween.tween_property(body,"modulate",Color(1,1,1,1),0.3).set_trans(Tween.TRANS_CIRC)
 	await get_tree().create_timer(0.5,false).timeout
 	tween.kill()
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> parent of dda01e1 (Physics engine changed)
@@ -119,5 +123,7 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 >>>>>>> parent of 28409a8 (i will fix it i hope)
 =======
 >>>>>>> parent of 24fac24 (hmmm)
+=======
+>>>>>>> parent of dda01e1 (Physics engine changed)
 =======
 >>>>>>> parent of dda01e1 (Physics engine changed)
