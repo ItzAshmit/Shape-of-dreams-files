@@ -46,6 +46,7 @@ func _on_area_2d_body_entered(_body: Node2D) -> void:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of dda01e1 (Physics engine changed)
 =======
 >>>>>>> parent of dda01e1 (Physics engine changed)
@@ -62,6 +63,8 @@ func _on_area_2d_body_entered(_body: Node2D) -> void:
 >>>>>>> parent of 28409a8 (i will fix it i hope)
 =======
 >>>>>>> parent of 24fac24 (hmmm)
+=======
+>>>>>>> parent of dda01e1 (Physics engine changed)
 =======
 >>>>>>> parent of dda01e1 (Physics engine changed)
 =======
@@ -84,6 +87,7 @@ func _on_area_2d_2_body_entered(_body: Node2D) -> void:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 24fac24 (hmmm)
 =======
@@ -149,6 +153,15 @@ func _on_area_2d_2_body_exited(_body: Node2D) -> void:
 >>>>>>> parent of 28409a8 (i will fix it i hope)
 =======
 >>>>>>> parent of 24fac24 (hmmm)
+=======
+	var distance = Global.player_position - global_position
+	velocity = velocity.move_toward(distance + global_position, SPEED)
+
+
+func _on_area_2d_2_body_exited(_body: Node2D) -> void:
+		var distance = Global.player_position - global_position
+		velocity = velocity.move_toward(distance - global_position, SPEED * 2)
+>>>>>>> parent of dda01e1 (Physics engine changed)
 =======
 	var distance = Global.player_position - global_position
 	velocity = velocity.move_toward(distance + global_position, SPEED)
