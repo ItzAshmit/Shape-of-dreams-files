@@ -73,6 +73,7 @@ right={
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 24fac24 (hmmm)
 =======
@@ -85,6 +86,8 @@ right={
 =======
 >>>>>>> parent of 24fac24 (hmmm)
 >>>>>>> parent of 3239f35 (nononon)
+=======
+>>>>>>> parent of 28409a8 (i will fix it i hope)
 
 [physics]
 
@@ -93,7 +96,6 @@ right={
 [rendering]
 
 textures/vram_compression/import_etc2_astc=true
-<<<<<<< HEAD
 =======
 >>>>>>> parent of dda01e1 (Physics engine changed)
 <<<<<<< HEAD
@@ -103,6 +105,7 @@ textures/vram_compression/import_etc2_astc=true
 >>>>>>> parent of 3239f35 (nononon)
 =======
 >>>>>>> parent of dda01e1 (Physics engine changed)
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> parent of 24fac24 (hmmm)
@@ -115,3 +118,5 @@ textures/vram_compression/import_etc2_astc=true
 >>>>>>> parent of ee10735 (wtf is going on)
 =======
 >>>>>>> parent of 3239f35 (nononon)
+=======
+>>>>>>> parent of 28409a8 (i will fix it i hope)

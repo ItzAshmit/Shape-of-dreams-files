@@ -15,6 +15,7 @@ var player_position:Vector2
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 24fac24 (hmmm)
 =======
@@ -27,13 +28,14 @@ var player_position:Vector2
 =======
 >>>>>>> parent of 24fac24 (hmmm)
 >>>>>>> parent of 3239f35 (nononon)
+=======
+>>>>>>> parent of 28409a8 (i will fix it i hope)
 var is_player_for_teleporter:bool = false
 
 var has_power_to_dash:bool = false
 var has_power_to_change_form:bool = false
 var has_power_to_attack:bool = false
 var can_move:bool = true
-<<<<<<< HEAD
 =======
 >>>>>>> parent of dda01e1 (Physics engine changed)
 <<<<<<< HEAD
@@ -43,6 +45,7 @@ var can_move:bool = true
 >>>>>>> parent of 3239f35 (nononon)
 =======
 >>>>>>> parent of dda01e1 (Physics engine changed)
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> parent of 24fac24 (hmmm)
@@ -55,6 +58,8 @@ var can_move:bool = true
 >>>>>>> parent of ee10735 (wtf is going on)
 =======
 >>>>>>> parent of 3239f35 (nononon)
+=======
+>>>>>>> parent of 28409a8 (i will fix it i hope)
 #For Player
 
 
