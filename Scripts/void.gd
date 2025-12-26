@@ -8,6 +8,7 @@ extends Area2D
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 24fac24 (hmmm)
 =======
@@ -22,6 +23,8 @@ extends Area2D
 >>>>>>> parent of 3239f35 (nononon)
 =======
 >>>>>>> parent of 28409a8 (i will fix it i hope)
+=======
+>>>>>>> parent of 24fac24 (hmmm)
 func kill_body(body):
 	if body.has_method("I_am_player"):
 		Global.main_player_HP -= 1000
@@ -30,6 +33,7 @@ func kill_body(body):
 
 func _on_body_exited(body: Node2D) -> void:
 	kill_body(body)
+<<<<<<< HEAD
 =======
 >>>>>>> parent of dda01e1 (Physics engine changed)
 <<<<<<< HEAD
@@ -54,11 +58,9 @@ func _on_body_exited(body: Node2D) -> void:
 >>>>>>> parent of 3239f35 (nononon)
 =======
 >>>>>>> parent of 28409a8 (i will fix it i hope)
+=======
+>>>>>>> parent of 24fac24 (hmmm)
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.has_method("I_am_player"):
-		print("implayer")
-		Global.main_player_HP -= 100
-	else:
-		body.queue_free()
+	kill_body(body)
