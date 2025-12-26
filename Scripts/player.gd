@@ -10,7 +10,22 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
+	if Global.is_player_for_teleporter:
+		Global.is_player_for_teleporter = true
+		var tween = get_tree().create_tween()
+		is_in_area = true
+		tween.tween_property($small_form,"modulate",Color(1,1,1,0.5),0.3).set_trans(Tween.TRANS_CIRC)
+		await get_tree().create_timer(0.5,false).timeout
+		tween.kill()
+	else:
+		Global.is_player_for_teleporter = false
+		var tween = get_tree().create_tween()
+		is_in_area = false
+		tween.tween_property($small_form,"modulate",Color(1,1,1,1),0.3).set_trans(Tween.TRANS_CIRC)
+		await get_tree().create_timer(0.5,false).timeout
+		tween.kill()
+		
+		
 func _input(_event: InputEvent) -> void:
 	if Global.has_power_to_change_form:
 		if Global.is_main_body:
@@ -45,16 +60,15 @@ func _input(_event: InputEvent) -> void:
 
 
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	var tween = get_tree().create_tween()
-	is_in_area = true
-	tween.tween_property(body,"modulate",Color(1,1,1,0.5),0.3).set_trans(Tween.TRANS_CIRC)
-	await get_tree().create_timer(0.5,false).timeout
-	tween.kill()
+func _on_area_2d_body_entered(_body: Node2D) -> void:
+	Global.is_player_for_teleporter = true
 
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 24fac24 (hmmm)
 
 func _on_area_2d_body_exited(_body: Node2D) -> void:
 	Global.is_player_for_teleporter = false
@@ -65,6 +79,7 @@ func apply_knockback(from_position: Vector2, force: float) -> void:
 		main_body.velocity = dir * force
 	else:
 		small_form.velocity = dir * force
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> parent of dda01e1 (Physics engine changed)
@@ -78,3 +93,5 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 >>>>>>> parent of dda01e1 (Physics engine changed)
 =======
 >>>>>>> parent of dda01e1 (Physics engine changed)
+=======
+>>>>>>> parent of 24fac24 (hmmm)

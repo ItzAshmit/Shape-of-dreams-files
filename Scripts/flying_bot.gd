@@ -22,13 +22,12 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 
 func atttttttackkkkk():
-	Global.main_player_HP -= 5 
-	print($"../Health".HP)
+	Global.main_player_HP -= 2.5
 	
 
 
 
-func _on_area_2d_body_exited(body: Node2D) -> void:
+func _on_area_2d_body_exited(_body: Node2D) -> void:
 	randomize()
 	direction *= -1
 	velocity.x = SPEED * direction

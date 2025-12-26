@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dde8rfq1bc48o"]
+
+[ext_resource type="Texture2D" uid="uid://v42d2kktlhdv" path="res://Assests/backgrounds/decoraters_futuristic.png" id="1_n76mr"]
+[ext_resource type="Texture2D" uid="uid://d1xhueik6exm2" path="res://Others/Light_lamp.tres" id="2_txobn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hjs8"]
+atlas = ExtResource("1_n76mr")
+region = Rect2(0, 499, 131, 525)
+
+[node name="Street Light" type="Node2D"]
+
+[node name="Street light" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_5hjs8")
+
+[node name="PointLight2D" type="PointLight2D" parent="Street light"]
+position = Vector2(18.999985, -217)
+scale = Vector2(10, 10)
+texture = ExtResource("2_txobn")

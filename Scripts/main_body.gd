@@ -24,14 +24,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if Global.is_main_body:
 		var direction := Input.get_axis("left", "right")
-		
-		
-		
-		
-		
-		
 ###############DASHHHH---
-<<<<<<< HEAD
 		if Global.has_power_to_dash:
 			if Input.is_action_just_pressed("dash"):
 				if can_dash:
@@ -95,73 +88,6 @@ func _physics_process(delta: float) -> void:
 			if not is_on_floor():
 				velocity += get_gravity() * delta
 			Global.player_position = global_position
-=======
-		if Input.is_action_just_pressed("dash"):
-			if can_dash:
-				if direction:
-					particles_2.modulate = Color(1,1,1,1)
-					cape.speed_scale = 2.0
-					particles_2.visible = true
-					particles_2.initial_velocity_max = 1000
-					if direction == 1:
-						the_boss.skew = 0.05
-						SPEED = 6000
-						can_dash = false
-						$Timer.start()
-					if direction == -1:
-						the_boss.skew = -0.05
-						SPEED = 6000
-						can_dash = false
-						$Timer.start()
-						
-						
-
-						
-						
-						
-###############MOVEMENT---
-		# Handle jump.
-		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-			velocity.y = JUMP_VELOCITY
-
-			
-			
-			
-		# Add the gravity.
-		var tween = get_tree().create_tween()
-		if not is_on_floor():
-			velocity += get_gravity() * delta
-			
-			
-		if direction:
-			tween.tween_property(the_boss,"scale",Vector2(1 * direction,the_boss.scale.y),0.2).set_trans(Tween.TRANS_QUAD)
-			tween.tween_property(the_boss,"rotation",0.1 * direction,0.5)
-			particles.emitting = true
-			particles.gravity.x = 1000.0 * direction
-
-			if animation_played_2:
-				cape.play("the aura starts")
-				is_walking = true
-				animation_played_2=false
-			velocity.x = direction * SPEED
-			the_roatted_aura.skew += velocity.x * (velocity.y + 1)/10000
-			the_roatted_aura.rotation += velocity.x * (velocity.y + 1)/10000
-			animation_played = false
-			
-		else:
-			tween.tween_property(the_boss,"rotation",0,0.5)
-			particles.gravity.x = 0
-			particles.emitting = false 
-			is_walking = false
-			if not is_walking and not animation_played:
-				cape.play_backwards("the aura starts")
-				animation_played = true
-				animation_played_2=true
-				
-			velocity.x = move_toward(velocity.x, 0, SPEED)
-		move_and_slide()
-		Global.player_position = global_position
->>>>>>> parent of dda01e1 (Physics engine changed)
 
 
 
@@ -187,6 +113,7 @@ func _on_timer_timeout() -> void:
 func _on_health_is_player_dead() -> void:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Engine.time_scale = 1
 	Global.is_main_body = true
 	Global.main_player_HP = 1000
@@ -198,14 +125,19 @@ func _on_health_is_player_dead() -> void:
 	Global.is_main_body = true
 	Global.main_player_HP = 100
 >>>>>>> parent of dda01e1 (Physics engine changed)
+=======
+	Engine.time_scale = 1
+	Global.is_main_body = true
+	Global.main_player_HP = 1000
+>>>>>>> parent of 24fac24 (hmmm)
 	get_tree().reload_current_scene()
 
 	
 	
 	
 func _input(_event: InputEvent) -> void:
+	if Global.is_main_body:
 ###############attacking---
-<<<<<<< HEAD
 		if Global.has_power_to_attack:
 			if can_melee_attack:
 				if Input.is_action_just_pressed("attack"):
@@ -230,6 +162,7 @@ func _input(_event: InputEvent) -> void:
 			
 			
 			
+<<<<<<< HEAD
 =======
 		if can_melee_attack:
 			if Input.is_action_just_pressed("attack"):
@@ -253,6 +186,8 @@ func _input(_event: InputEvent) -> void:
 >>>>>>> parent of dda01e1 (Physics engine changed)
 =======
 >>>>>>> parent of dda01e1 (Physics engine changed)
+=======
+>>>>>>> parent of 24fac24 (hmmm)
 			
 func I_am_player():
 	pass
