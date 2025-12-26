@@ -8,12 +8,15 @@ var is_main_body:bool = true
 var main_player_HP:float = 100.0
 var player_melee_attack:float = 20.0
 var player_position:Vector2
+<<<<<<< HEAD
 var is_player_for_teleporter:bool = false
 
 var has_power_to_dash:bool = false
 var has_power_to_change_form:bool = false
 var has_power_to_attack:bool = false
 var can_move:bool = true
+=======
+>>>>>>> parent of dda01e1 (Physics engine changed)
 #For Player
 
 
