@@ -11,8 +11,11 @@ var player_position:Vector2
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 24fac24 (hmmm)
+=======
+>>>>>>> parent of ee10735 (wtf is going on)
 var is_player_for_teleporter:bool = false
 
 var has_power_to_dash:bool = false
@@ -22,10 +25,13 @@ var can_move:bool = true
 <<<<<<< HEAD
 =======
 >>>>>>> parent of dda01e1 (Physics engine changed)
+<<<<<<< HEAD
 =======
 >>>>>>> parent of dda01e1 (Physics engine changed)
 =======
 >>>>>>> parent of 24fac24 (hmmm)
+=======
+>>>>>>> parent of ee10735 (wtf is going on)
 #For Player
 
 

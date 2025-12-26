@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 [gd_scene load_steps=40 format=4 uid="uid://dpe7k54ep8o6n"]
-=======
-[gd_scene load_steps=40 format=4 uid="uid://blrda3i3vqgqg"]
->>>>>>> parent of dda01e1 (Physics engine changed)
 
 [ext_resource type="Texture2D" uid="uid://v42d2kktlhdv" path="res://Assests/decoraters_futuristic.png" id="1_uebcy"]
 [ext_resource type="Texture2D" uid="uid://cfqwcv6ncwhoo" path="res://Assests/animated_tiles.png" id="2_vo4si"]
