@@ -4,8 +4,11 @@ extends Area2D
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 24fac24 (hmmm)
+=======
+>>>>>>> parent of ee10735 (wtf is going on)
 =======
 >>>>>>> parent of ee10735 (wtf is going on)
 func kill_body(body):
@@ -22,8 +25,11 @@ func _on_body_exited(body: Node2D) -> void:
 <<<<<<< HEAD
 =======
 >>>>>>> parent of dda01e1 (Physics engine changed)
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 24fac24 (hmmm)
+=======
+>>>>>>> parent of ee10735 (wtf is going on)
 =======
 >>>>>>> parent of ee10735 (wtf is going on)
 

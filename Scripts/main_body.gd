@@ -115,6 +115,9 @@ func _on_health_is_player_dead() -> void:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of ee10735 (wtf is going on)
 =======
 >>>>>>> parent of ee10735 (wtf is going on)
 	Engine.time_scale = 1
@@ -125,6 +128,7 @@ func _on_health_is_player_dead() -> void:
 	Global.main_player_HP = 100
 >>>>>>> parent of dda01e1 (Physics engine changed)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	Global.is_main_body = true
 	Global.main_player_HP = 100
@@ -134,6 +138,8 @@ func _on_health_is_player_dead() -> void:
 	Global.is_main_body = true
 	Global.main_player_HP = 1000
 >>>>>>> parent of 24fac24 (hmmm)
+=======
+>>>>>>> parent of ee10735 (wtf is going on)
 =======
 >>>>>>> parent of ee10735 (wtf is going on)
 	get_tree().reload_current_scene()
@@ -189,8 +195,11 @@ func _input(_event: InputEvent) -> void:
 				await get_tree().create_timer(0.74).timeout
 				can_melee_attack = true
 >>>>>>> parent of dda01e1 (Physics engine changed)
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 24fac24 (hmmm)
+=======
+>>>>>>> parent of ee10735 (wtf is going on)
 			
 func I_am_player():
 	pass
