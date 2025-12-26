@@ -26,6 +26,7 @@ extends Area2D
 =======
 >>>>>>> parent of 24fac24 (hmmm)
 func kill_body(body):
+	print("hellllo")
 	if body.has_method("I_am_player"):
 		Global.main_player_HP -= 1000
 	else:

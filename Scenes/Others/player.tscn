@@ -964,8 +964,7 @@ scale_amount_max = 0.5
 color = Color(0, 0, 0, 1)
 
 [node name="Camera2D" type="Camera2D" parent="main_body"]
-position = Vector2(-1.2499695, 2.4999847)
-zoom = Vector2(0.5, 0.5)
+position = Vector2(303.75, -203.75)
 position_smoothing_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="main_body"]
