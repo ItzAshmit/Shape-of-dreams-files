@@ -116,6 +116,9 @@ func _on_health_is_player_dead() -> void:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of ee10735 (wtf is going on)
 =======
 >>>>>>> parent of ee10735 (wtf is going on)
 =======
@@ -127,6 +130,7 @@ func _on_health_is_player_dead() -> void:
 	Global.is_main_body = true
 	Global.main_player_HP = 100
 >>>>>>> parent of dda01e1 (Physics engine changed)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -138,6 +142,8 @@ func _on_health_is_player_dead() -> void:
 	Global.is_main_body = true
 	Global.main_player_HP = 1000
 >>>>>>> parent of 24fac24 (hmmm)
+=======
+>>>>>>> parent of ee10735 (wtf is going on)
 =======
 >>>>>>> parent of ee10735 (wtf is going on)
 =======
@@ -196,8 +202,11 @@ func _input(_event: InputEvent) -> void:
 				can_melee_attack = true
 >>>>>>> parent of dda01e1 (Physics engine changed)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 24fac24 (hmmm)
+=======
+>>>>>>> parent of ee10735 (wtf is going on)
 =======
 >>>>>>> parent of ee10735 (wtf is going on)
 			

@@ -69,8 +69,11 @@ func _on_area_2d_body_entered(_body: Node2D) -> void:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 24fac24 (hmmm)
+=======
+>>>>>>> parent of ee10735 (wtf is going on)
 =======
 >>>>>>> parent of ee10735 (wtf is going on)
 =======
@@ -95,7 +98,10 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 	tween.kill()
 >>>>>>> parent of dda01e1 (Physics engine changed)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 24fac24 (hmmm)
+=======
+>>>>>>> parent of ee10735 (wtf is going on)
 =======
 >>>>>>> parent of ee10735 (wtf is going on)

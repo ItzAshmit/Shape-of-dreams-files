@@ -48,8 +48,11 @@ func _on_area_2d_body_entered(_body: Node2D) -> void:
 	print(Global.main_player_HP)
 >>>>>>> parent of dda01e1 (Physics engine changed)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 24fac24 (hmmm)
+=======
+>>>>>>> parent of ee10735 (wtf is going on)
 =======
 >>>>>>> parent of ee10735 (wtf is going on)
 
@@ -64,8 +67,11 @@ func _on_area_2d_2_body_entered(_body: Node2D) -> void:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 24fac24 (hmmm)
+=======
+>>>>>>> parent of ee10735 (wtf is going on)
 =======
 >>>>>>> parent of ee10735 (wtf is going on)
 =======
@@ -89,6 +95,7 @@ func _on_area_2d_2_body_exited(_body: Node2D) -> void:
 		velocity = velocity.move_toward(distance - global_position, SPEED * 2)
 >>>>>>> parent of dda01e1 (Physics engine changed)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	var distance = Global.player_position - global_position
 	velocity = velocity.move_toward(distance + global_position, SPEED)
@@ -101,6 +108,8 @@ func _on_area_2d_2_body_exited(_body: Node2D) -> void:
 <<<<<<< HEAD
 =======
 >>>>>>> parent of 24fac24 (hmmm)
+=======
+>>>>>>> parent of ee10735 (wtf is going on)
 =======
 >>>>>>> parent of ee10735 (wtf is going on)
 =======
