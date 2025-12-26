@@ -6,6 +6,7 @@ extends Area2D
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 24fac24 (hmmm)
 =======
@@ -14,6 +15,10 @@ extends Area2D
 >>>>>>> parent of ee10735 (wtf is going on)
 =======
 >>>>>>> parent of ee10735 (wtf is going on)
+=======
+=======
+>>>>>>> parent of 24fac24 (hmmm)
+>>>>>>> parent of 3239f35 (nononon)
 func kill_body(body):
 	if body.has_method("I_am_player"):
 		Global.main_player_HP -= 1000
@@ -27,17 +32,23 @@ func _on_body_exited(body: Node2D) -> void:
 >>>>>>> parent of dda01e1 (Physics engine changed)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 3239f35 (nononon)
 =======
 >>>>>>> parent of dda01e1 (Physics engine changed)
 <<<<<<< HEAD
 =======
 >>>>>>> parent of 24fac24 (hmmm)
+<<<<<<< HEAD
 =======
 >>>>>>> parent of ee10735 (wtf is going on)
 =======
 >>>>>>> parent of ee10735 (wtf is going on)
 =======
 >>>>>>> parent of ee10735 (wtf is going on)
+=======
+>>>>>>> parent of 3239f35 (nononon)
 
 
 func _on_body_entered(body: Node2D) -> void:
