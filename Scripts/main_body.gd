@@ -186,9 +186,14 @@ func _on_timer_timeout() -> void:
 
 func _on_health_is_player_dead() -> void:
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Engine.time_scale = 1
 	Global.is_main_body = true
 	Global.main_player_HP = 1000
+=======
+	Global.is_main_body = true
+	Global.main_player_HP = 100
+>>>>>>> parent of dda01e1 (Physics engine changed)
 =======
 	Global.is_main_body = true
 	Global.main_player_HP = 100
@@ -244,6 +249,9 @@ func _input(_event: InputEvent) -> void:
 				can_melee_attack = false
 				await get_tree().create_timer(0.74).timeout
 				can_melee_attack = true
+<<<<<<< HEAD
+>>>>>>> parent of dda01e1 (Physics engine changed)
+=======
 >>>>>>> parent of dda01e1 (Physics engine changed)
 			
 func I_am_player():

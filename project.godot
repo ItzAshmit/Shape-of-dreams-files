@@ -67,6 +67,7 @@ right={
 ]
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 [physics]
 
@@ -75,5 +76,7 @@ right={
 [rendering]
 
 textures/vram_compression/import_etc2_astc=true
+=======
+>>>>>>> parent of dda01e1 (Physics engine changed)
 =======
 >>>>>>> parent of dda01e1 (Physics engine changed)

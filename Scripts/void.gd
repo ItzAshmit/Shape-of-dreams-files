@@ -1,6 +1,7 @@
 extends Area2D
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 func kill_body(body):
 	if body.has_method("I_am_player"):
 		Global.main_player_HP -= 1000
@@ -9,6 +10,8 @@ func kill_body(body):
 
 func _on_body_exited(body: Node2D) -> void:
 	kill_body(body)
+=======
+>>>>>>> parent of dda01e1 (Physics engine changed)
 =======
 >>>>>>> parent of dda01e1 (Physics engine changed)
 
