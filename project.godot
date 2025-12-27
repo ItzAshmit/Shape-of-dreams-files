@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="The boss"
-run/main_scene="uid://blrda3i3vqgqg"
+run/main_scene="uid://bmomjo7ceybc7"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://Others/icon.svg"
 
@@ -24,13 +24,10 @@ Global="*res://Scripts/AutoLoads/Global.gd"
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
-[editor_plugins]
-
-enabled=PackedStringArray()
-
 [file_customization]
 
 folder_colors={
+"res://Assests/": "pink",
 "res://Scenes/": "teal"
 }
 
@@ -66,78 +63,7 @@ right={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194321,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 24fac24 (hmmm)
-=======
->>>>>>> parent of ee10735 (wtf is going on)
-=======
->>>>>>> parent of ee10735 (wtf is going on)
-=======
->>>>>>> parent of ee10735 (wtf is going on)
-=======
-=======
->>>>>>> parent of 24fac24 (hmmm)
->>>>>>> parent of 3239f35 (nononon)
-=======
->>>>>>> parent of 28409a8 (i will fix it i hope)
-=======
->>>>>>> parent of 24fac24 (hmmm)
 
 [physics]
 
 2d/physics_engine="Rapier2D"
-<<<<<<< HEAD
-
-[rendering]
-
-textures/vram_compression/import_etc2_astc=true
-<<<<<<< HEAD
-=======
->>>>>>> parent of dda01e1 (Physics engine changed)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 3239f35 (nononon)
-=======
->>>>>>> parent of dda01e1 (Physics engine changed)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 24fac24 (hmmm)
-<<<<<<< HEAD
-=======
->>>>>>> parent of ee10735 (wtf is going on)
-=======
->>>>>>> parent of ee10735 (wtf is going on)
-=======
->>>>>>> parent of ee10735 (wtf is going on)
-=======
->>>>>>> parent of 3239f35 (nononon)
-=======
->>>>>>> parent of 28409a8 (i will fix it i hope)
-=======
->>>>>>> parent of 24fac24 (hmmm)
-=======
->>>>>>> parent of 4887052 (added some more features and polished a little)
-=======
->>>>>>> parent of dda01e1 (Physics engine changed)
-=======
->>>>>>> parent of dda01e1 (Physics engine changed)
-=======
->>>>>>> parent of dda01e1 (Physics engine changed)
-=======
->>>>>>> parent of dda01e1 (Physics engine changed)

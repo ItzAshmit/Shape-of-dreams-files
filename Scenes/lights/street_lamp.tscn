@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bl3daax2yhhma"]
+
+[ext_resource type="Texture2D" uid="uid://v42d2kktlhdv" path="res://Assests/backgrounds/decoraters_futuristic.png" id="1_k6m25"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjl58"]
+atlas = ExtResource("1_k6m25")
+region = Rect2(608, 640, 432, 384)
+
+[sub_resource type="Gradient" id="Gradient_sa34s"]
+offsets = PackedFloat32Array(0, 0.98)
+colors = PackedColorArray(0, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_f4p8t"]
+gradient = SubResource("Gradient_sa34s")
+fill = 1
+fill_from = Vector2(0.5140187, 0.48598132)
+fill_to = Vector2(0.8224299, 0.10747664)
+
+[node name="Sprite2D" type="Sprite2D"]
+texture = SubResource("AtlasTexture_gjl58")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-128.99998, -108.99999)
+scale = Vector2(10, 10)
+texture = SubResource("GradientTexture2D_f4p8t")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(129.99998, -111.99999)
+scale = Vector2(10, 10)
+texture = SubResource("GradientTexture2D_f4p8t")

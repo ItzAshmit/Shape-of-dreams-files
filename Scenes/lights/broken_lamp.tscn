@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://stsp5gagb5lk"]
+
+[ext_resource type="Texture2D" uid="uid://cfqwcv6ncwhoo" path="res://Assests/backgrounds/animated_tiles.png" id="1_yal7q"]
+[ext_resource type="Script" uid="uid://deny07gggnu2p" path="res://animation_of_lights.gd" id="2_ysbce"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2r14y"]
+atlas = ExtResource("1_yal7q")
+region = Rect2(0, 256, 512, 128)
+
+[sub_resource type="Gradient" id="Gradient_sa34s"]
+offsets = PackedFloat32Array(0, 0.98)
+colors = PackedColorArray(1, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_aj7qu"]
+gradient = SubResource("Gradient_sa34s")
+fill = 1
+fill_from = Vector2(0.5140187, 0.48598132)
+fill_to = Vector2(0.8224299, 0.10747664)
+
+[node name="Sprite2D" type="Sprite2D"]
+texture = SubResource("AtlasTexture_2r14y")
+hframes = 4
+frame = 2
+script = ExtResource("2_ysbce")
+first_frame_time = 0.25
+second_frame_time = 0.125
+third_frame_time = 1.0
+highest_at_which_frame = 2
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(35.999996, 16.999998)
+scale = Vector2(6.343329, 6.345241)
+energy = 2.0
+texture = SubResource("GradientTexture2D_aj7qu")
